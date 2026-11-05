@@ -1,0 +1,16 @@
+# CQ5  Why is offer ?a ranked above offer ?b? (contrastive explanation)
+# Because S is additive, the gap S(a) - S(b) splits exactly into the
+# contributions of comfort, cost and booking. ?a and ?b are bound by the caller.
+PREFIX wm:   <http://example.org/ridesharing#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?a ?b ?gap ?dComfort ?dCost ?dBooking WHERE {
+  ?a wm:hasComfortLevel ?la ; wm:hasCostScore ?ka ; wm:hasBookingMode ?ma .
+  ?b wm:hasComfortLevel ?lb ; wm:hasCostScore ?kb ; wm:hasBookingMode ?mb .
+  VALUES (?la ?ca) { (wm:VeryComfortable 10.0) (wm:Comfortable 7.5) (wm:Bearable 5.0) (wm:Uncomfortable 2.5) }
+  VALUES (?lb ?cb) { (wm:VeryComfortable 10.0) (wm:Comfortable 7.5) (wm:Bearable 5.0) (wm:Uncomfortable 2.5) }
+  BIND(0.4 * (?ca - ?cb) AS ?dComfort)
+  BIND(0.4 * (?ka - ?kb) AS ?dCost)
+  BIND(0.2 * (IF(?ma = "auto", 10.0, 2.5) - IF(?mb = "auto", 10.0, 2.5)) AS ?dBooking)
+  BIND(?dComfort + ?dCost + ?dBooking AS ?gap)
+}

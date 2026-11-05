@@ -1,0 +1,10 @@
+{
+  "engine": "rdflib 7.6.0",
+  "searches": 30,
+  "offers_per_search": 100,
+  "score_mismatches": 0,
+  "rule_mismatches": 0,
+  "tradeoff_mismatches": 0,
+  "order_violations": 0,
+  "median_ms_per_search": 679.9
+}

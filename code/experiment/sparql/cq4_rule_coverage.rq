@@ -1,0 +1,5 @@
+# CQ4  How many offers did each rule classify?
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?rule (COUNT(DISTINCT ?offer) AS ?n) WHERE {
+  ?f a prov:Activity ; prov:used ?offer ; prov:qualifiedAssociation/prov:hadPlan ?rule .
+} GROUP BY ?rule ORDER BY ?rule

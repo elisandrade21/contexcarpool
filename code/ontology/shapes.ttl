@@ -1,0 +1,36 @@
+@prefix wm:   <http://example.org/ridesharing#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# SHACL input contract of ValidateAndProject: a projected listing may enter the
+# reasoning step only if it conforms to wm:TravelShape. Records that violate it
+# are rejected before any rule fires.
+wm:TravelShape a sh:NodeShape ;
+    sh:targetClass wm:Travel ;
+    rdfs:comment "Minimum data a carpooling offer needs to be ranked and explained."@en ;
+    sh:property [
+        sh:path wm:hasSeatsAvailable ; sh:datatype xsd:integer ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:minInclusive 1 ; sh:maxInclusive 4 ;
+        sh:message "exactly one integer number of available passenger seats in [1, 4] (five-seat cars; vans are out of scope)" ] ;
+    sh:property [
+        sh:path wm:hasBookingMode ; sh:datatype xsd:string ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "auto" "manual" ) ;
+        sh:message "booking mode must be \"auto\" or \"manual\"" ] ;
+    sh:property [
+        sh:path wm:hasPricePerKm ; sh:datatype xsd:decimal ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:minExclusive 0 ;
+        sh:message "exactly one positive price per km" ] ;
+    sh:property [
+        sh:path wm:hasDistance ; sh:datatype xsd:decimal ;
+        sh:minCount 1 ; sh:maxCount 1 ; sh:minExclusive 0 ;
+        sh:message "exactly one positive distance" ] ;
+    sh:property [
+        sh:path wm:hasMarket ; sh:datatype xsd:string ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "exactly one market" ] ;
+    sh:property [
+        sh:path wm:hasDepartureMinute ; sh:datatype xsd:integer ; sh:maxCount 1 ;
+        sh:message "at most one integer departure minute" ] ;
+    sh:property [
+        sh:path wm:hasPickup ; sh:class wm:Place ; sh:maxCount 1 ;
+        sh:message "at most one pickup place" ] .

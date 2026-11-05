@@ -1,0 +1,14 @@
+# CQ8  What does each passenger owe after the trip, or which trips are disputed, and by which rule?
+PREFIX wm:   <http://example.org/ridesharing#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?offer ?rule ?fare ?disputed
+WHERE {
+  ?offer a wm:Travel .
+  ?fact prov:wasDerivedFrom ?offer ; prov:wasGeneratedBy/prov:qualifiedAssociation/prov:hadPlan ?r .
+  ?r rdfs:label ?rule . FILTER(STR(?rule) IN ("R14", "R15"))
+  OPTIONAL { ?offer wm:hasFinalFare ?fare }
+  BIND(EXISTS { ?offer wm:hasContextNote wm:FareDisputed } AS ?disputed)
+}
+ORDER BY ?offer

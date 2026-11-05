@@ -1,0 +1,24 @@
+{
+  "service": "RankService (JDK HttpServer + Apache Jena 4.10), localhost",
+  "offers_per_request": 100,
+  "correctness_requests": 20,
+  "requests_with_wrong_order_or_score": 0,
+  "concurrency_1": {
+    "requests": 300,
+    "median_ms": 7.3,
+    "p95_ms": 13.4,
+    "throughput_req_s": 126.1
+  },
+  "concurrency_4": {
+    "requests": 300,
+    "median_ms": 9.4,
+    "p95_ms": 14.0,
+    "throughput_req_s": 412.2
+  },
+  "concurrency_8": {
+    "requests": 300,
+    "median_ms": 16.1,
+    "p95_ms": 24.3,
+    "throughput_req_s": 483.1
+  }
+}

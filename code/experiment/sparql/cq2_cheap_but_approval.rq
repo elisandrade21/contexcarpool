@@ -1,0 +1,5 @@
+# CQ2  Which offers of a market are cheap but require driver approval?
+PREFIX wm: <http://example.org/ridesharing#>
+SELECT ?offer ?fK WHERE {
+  ?offer wm:hasMarket ?market ; wm:hasTradeOff wm:ApprovalBargain ; wm:hasCostScore ?fK .
+} ORDER BY DESC(?fK)

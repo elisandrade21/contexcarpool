@@ -1,0 +1,10 @@
+{
+  "searches": 90,
+  "offers": 6600,
+  "rationale_text_mismatches": 0,
+  "score_mismatches": 0,
+  "order_violations": 0,
+  "example_mismatch": null,
+  "server": "RankService (Apache Jena 4.10, percentile by sorting)",
+  "phone_engine": "Oxigraph 0.5.13 (WebAssembly, SPARQL percentile)"
+}

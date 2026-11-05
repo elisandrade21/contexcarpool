@@ -1,0 +1,602 @@
+[
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.005,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.0006,
+  "overcharge_detection_rate": 0.9608,
+  "undetected_mean_extra_percent": 0.6,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.005,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8996,
+  "undetected_mean_extra_percent": 1.27,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.005,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8081,
+  "undetected_mean_extra_percent": 2.51,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.01,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.0639,
+  "overcharge_detection_rate": 0.9623,
+  "undetected_mean_extra_percent": 0.77,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.01,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0001,
+  "overcharge_detection_rate": 0.8954,
+  "undetected_mean_extra_percent": 1.37,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.01,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8049,
+  "undetected_mean_extra_percent": 2.57,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.02,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.3409,
+  "overcharge_detection_rate": 0.9604,
+  "undetected_mean_extra_percent": 1.38,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.02,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0227,
+  "overcharge_detection_rate": 0.9013,
+  "undetected_mean_extra_percent": 1.75,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.02,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0001,
+  "overcharge_detection_rate": 0.7997,
+  "undetected_mean_extra_percent": 2.79,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.03,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.515,
+  "overcharge_detection_rate": 0.9626,
+  "undetected_mean_extra_percent": 2.44,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.03,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.118,
+  "overcharge_detection_rate": 0.9084,
+  "undetected_mean_extra_percent": 2.35,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.03,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0046,
+  "overcharge_detection_rate": 0.8088,
+  "undetected_mean_extra_percent": 3.14,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.05,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.6958,
+  "overcharge_detection_rate": 0.9604,
+  "undetected_mean_extra_percent": 3.65,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.05,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.337,
+  "overcharge_detection_rate": 0.9025,
+  "undetected_mean_extra_percent": 3.59,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.05,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0625,
+  "overcharge_detection_rate": 0.7996,
+  "undetected_mean_extra_percent": 3.88,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.005,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.9573,
+  "undetected_mean_extra_percent": 0.56,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.005,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.9024,
+  "undetected_mean_extra_percent": 1.28,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.005,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.7964,
+  "undetected_mean_extra_percent": 2.53,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.01,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.016,
+  "overcharge_detection_rate": 0.9619,
+  "undetected_mean_extra_percent": 0.85,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.01,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8959,
+  "undetected_mean_extra_percent": 1.33,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.01,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.7988,
+  "undetected_mean_extra_percent": 2.54,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.02,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.1849,
+  "overcharge_detection_rate": 0.9583,
+  "undetected_mean_extra_percent": 1.71,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.02,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0022,
+  "overcharge_detection_rate": 0.9049,
+  "undetected_mean_extra_percent": 1.73,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.02,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8054,
+  "undetected_mean_extra_percent": 2.75,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.03,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.3757,
+  "overcharge_detection_rate": 0.9603,
+  "undetected_mean_extra_percent": 2.32,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.03,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.034,
+  "overcharge_detection_rate": 0.9029,
+  "undetected_mean_extra_percent": 2.33,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.03,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0001,
+  "overcharge_detection_rate": 0.805,
+  "undetected_mean_extra_percent": 3.06,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.05,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.5826,
+  "overcharge_detection_rate": 0.963,
+  "undetected_mean_extra_percent": 3.59,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.05,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.1867,
+  "overcharge_detection_rate": 0.9008,
+  "undetected_mean_extra_percent": 3.82,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 300.0,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.05,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0119,
+  "overcharge_detection_rate": 0.8071,
+  "undetected_mean_extra_percent": 3.86,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.005,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.0007,
+  "overcharge_detection_rate": 0.9614,
+  "undetected_mean_extra_percent": 0.58,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.005,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.9009,
+  "undetected_mean_extra_percent": 1.3,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.005,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.7937,
+  "undetected_mean_extra_percent": 2.54,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.01,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.0695,
+  "overcharge_detection_rate": 0.9615,
+  "undetected_mean_extra_percent": 0.83,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.01,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8972,
+  "undetected_mean_extra_percent": 1.39,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.01,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.799,
+  "undetected_mean_extra_percent": 2.59,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.02,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.3282,
+  "overcharge_detection_rate": 0.9642,
+  "undetected_mean_extra_percent": 1.56,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.02,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0233,
+  "overcharge_detection_rate": 0.9033,
+  "undetected_mean_extra_percent": 1.82,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.02,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8007,
+  "undetected_mean_extra_percent": 2.69,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.03,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.516,
+  "overcharge_detection_rate": 0.9592,
+  "undetected_mean_extra_percent": 2.27,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.03,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.1171,
+  "overcharge_detection_rate": 0.9049,
+  "undetected_mean_extra_percent": 2.34,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.03,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0045,
+  "overcharge_detection_rate": 0.8039,
+  "undetected_mean_extra_percent": 3.01,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.05,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.6918,
+  "overcharge_detection_rate": 0.9634,
+  "undetected_mean_extra_percent": 3.45,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.05,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.3301,
+  "overcharge_detection_rate": 0.903,
+  "undetected_mean_extra_percent": 3.54,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.0,
+  "gps_sigma": 0.05,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0679,
+  "overcharge_detection_rate": 0.8041,
+  "undetected_mean_extra_percent": 4.07,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.005,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.9652,
+  "undetected_mean_extra_percent": 0.59,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.005,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8996,
+  "undetected_mean_extra_percent": 1.27,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.005,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8062,
+  "undetected_mean_extra_percent": 2.56,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.01,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.0146,
+  "overcharge_detection_rate": 0.957,
+  "undetected_mean_extra_percent": 0.83,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.01,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8989,
+  "undetected_mean_extra_percent": 1.46,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.01,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.7969,
+  "undetected_mean_extra_percent": 2.6,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.02,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.1829,
+  "overcharge_detection_rate": 0.9635,
+  "undetected_mean_extra_percent": 1.5,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.02,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0018,
+  "overcharge_detection_rate": 0.9018,
+  "undetected_mean_extra_percent": 1.76,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.02,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0,
+  "overcharge_detection_rate": 0.8077,
+  "undetected_mean_extra_percent": 2.73,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.03,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.3581,
+  "overcharge_detection_rate": 0.9584,
+  "undetected_mean_extra_percent": 2.34,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.03,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.0312,
+  "overcharge_detection_rate": 0.8987,
+  "undetected_mean_extra_percent": 2.25,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.03,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0001,
+  "overcharge_detection_rate": 0.8031,
+  "undetected_mean_extra_percent": 2.99,
+  "max_one_sided_shift_percent": 5.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.05,
+  "tolerance": 0.02,
+  "false_dispute_rate": 0.576,
+  "overcharge_detection_rate": 0.9659,
+  "undetected_mean_extra_percent": 3.58,
+  "max_one_sided_shift_percent": 1.0
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.05,
+  "tolerance": 0.05,
+  "false_dispute_rate": 0.1851,
+  "overcharge_detection_rate": 0.9028,
+  "undetected_mean_extra_percent": 3.74,
+  "max_one_sided_shift_percent": 2.5
+ },
+ {
+  "trip_km": 13.8,
+  "error_correlation": 0.5,
+  "gps_sigma": 0.05,
+  "tolerance": 0.1,
+  "false_dispute_rate": 0.0116,
+  "overcharge_detection_rate": 0.8031,
+  "undetected_mean_extra_percent": 3.93,
+  "max_one_sided_shift_percent": 5.0
+ }
+]

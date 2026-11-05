@@ -1,0 +1,51 @@
+{
+  "price_5": {
+    "markets_tau": 0.922,
+    "markets_top10": 0.885,
+    "pages100_tau": 0.92,
+    "pages100_top10": 0.9,
+    "pages100_top10_p5": 0.8
+  },
+  "price_10": {
+    "markets_tau": 0.849,
+    "markets_top10": 0.777,
+    "pages100_tau": 0.846,
+    "pages100_top10": 0.83,
+    "pages100_top10_p5": 0.7
+  },
+  "price_20": {
+    "markets_tau": 0.728,
+    "markets_top10": 0.602,
+    "pages100_tau": 0.723,
+    "pages100_top10": 0.701,
+    "pages100_top10_p5": 0.5
+  },
+  "booking_5": {
+    "markets_tau": 0.949,
+    "markets_top10": 0.936,
+    "pages100_tau": 0.951,
+    "pages100_top10": 0.936,
+    "pages100_top10_p5": 0.8
+  },
+  "booking_10": {
+    "markets_tau": 0.901,
+    "markets_top10": 0.881,
+    "pages100_tau": 0.905,
+    "pages100_top10": 0.887,
+    "pages100_top10_p5": 0.7
+  },
+  "seats_10": {
+    "markets_tau": 0.945,
+    "markets_top10": 0.87,
+    "pages100_tau": 0.946,
+    "pages100_top10": 0.922,
+    "pages100_top10_p5": 0.8
+  },
+  "combined": {
+    "markets_tau": 0.785,
+    "markets_top10": 0.675,
+    "pages100_tau": 0.783,
+    "pages100_top10": 0.761,
+    "pages100_top10_p5": 0.6
+  }
+}

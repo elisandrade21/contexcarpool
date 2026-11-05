@@ -1,0 +1,10 @@
+{
+  "price": {
+    "mean_tau": 0.258,
+    "mean_top10_overlap": 0.06
+  },
+  "price_per_km": {
+    "mean_tau": 0.509,
+    "mean_top10_overlap": 0.14
+  }
+}

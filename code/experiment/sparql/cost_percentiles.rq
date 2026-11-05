@@ -1,0 +1,12 @@
+# CostPercentiles: within-search percentile of price per km, reversed so that the
+# cheapest offer scores 10 (ties get the average rank, as in the reference code).
+# Runs as a SPARQL 1.1 Update over the graph of ONE search.
+PREFIX wm: <http://example.org/ridesharing#>
+INSERT { ?a wm:hasCostScore ?k }
+WHERE {
+  { SELECT (COUNT(?x) AS ?n) WHERE { ?x a wm:Travel } }
+  { SELECT ?a (SUM(IF(?pb < ?pa, 1, 0)) AS ?less) (SUM(IF(?pb = ?pa, 1, 0)) AS ?eq)
+    WHERE { ?a a wm:Travel ; wm:hasPricePerKm ?pa . ?b a wm:Travel ; wm:hasPricePerKm ?pb . }
+    GROUP BY ?a }
+  BIND(10.0 * (1.0 - (?less + (?eq + 1) / 2.0) / ?n) AS ?k)
+}

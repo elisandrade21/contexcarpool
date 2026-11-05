@@ -1,0 +1,23 @@
+# CQ7  Personal view, computed only on the passenger's device.
+# Groups the offers by the device context: pickup within 5 km and reachable on foot in time;
+# reachable only by car (R13); not reachable in time or already left. The public order (S) is kept
+# within each group; the app then orders each group by total cost.
+# The public ranking (CQ1) is unchanged and is the one a third party checks.
+PREFIX wm:   <http://example.org/ridesharing#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+SELECT ?offer ?S ?blocked ?reason
+WHERE {
+  ?offer a wm:Travel ; wm:hasCostScore ?fK ; wm:hasBookingMode ?mode ; wm:hasComfortLevel ?level ;
+         wm:hasDepartureMinute ?dep .
+  ?c a wm:DeviceContext ; wm:hasNowMinute ?now .
+  VALUES (?level ?fC) { (wm:VeryComfortable 10.0) (wm:Comfortable 7.5)
+                        (wm:Bearable 5.0) (wm:Uncomfortable 2.5) }
+  BIND(IF(?mode = "auto", 10.0, 2.5) AS ?fB)
+  BIND(0.4 * ?fC + 0.4 * ?fK + 0.2 * ?fB AS ?S)
+  BIND(EXISTS { ?offer wm:hasContextNote ?far . FILTER(?far IN (wm:MissableOnFoot, wm:DistantPickup)) } AS ?missable)
+  BIND(EXISTS { ?offer wm:hasContextNote wm:ReachableByCar } AS ?byCar)
+  BIND(IF(?dep < ?now, "already left", IF(?byCar, "reachable in time only by car",
+       IF(?missable, "not reachable in time", ""))) AS ?reason)
+  BIND(IF(?reason = "", 0, IF(?byCar, 1, 2)) AS ?blocked)
+}
+ORDER BY ?blocked DESC(?S) ?offer

@@ -1,0 +1,10 @@
+{
+  "note": "100-offer search; gzip level 9; measured 2026-11-05",
+  "offers_json_bytes": 16759,
+  "offers_gzip_bytes": 2405,
+  "request_json_bytes": 16854,
+  "server_response_bytes": 47340,
+  "server_response_gzip_bytes": 2447,
+  "engine_transfer_bytes_iphone": 1600800,
+  "engine_transfer_bytes_android": 1597290
+}

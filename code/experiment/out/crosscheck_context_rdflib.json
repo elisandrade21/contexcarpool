@@ -1,0 +1,11 @@
+{
+  "engine": "rdflib",
+  "searches": 90,
+  "offers_per_search": 100,
+  "score_mismatches": 0,
+  "context_note_mismatches": 0,
+  "order_changed_by_context": 0,
+  "personal_view_mismatches": 0,
+  "settlement_trips": 1977,
+  "settlement_mismatches": 0
+}

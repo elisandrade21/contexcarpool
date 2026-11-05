@@ -1,0 +1,87 @@
+# Jena rules (GenericRuleReasoner, forward chaining): an implementation of
+# ontology/rules.ru (SPARQL 1.1 Update, the reference) for Jena users. Same
+# rules R1-R8 and the same qualified PROV-O pattern; firing, association and
+# fact nodes are Skolem blank nodes instead of derived IRIs.
+@prefix wm:   <http://example.org/ridesharing#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+[R1_VeryComfortable:
+    (?a rdf:type wm:Travel) (?a wm:hasSeatsAvailable ?d) ge(?d, 4)
+    makeSkolem(?f, ?a, wm:R1, 'firing') makeSkolem(?q, ?a, wm:R1, 'association') makeSkolem(?e, ?a, wm:R1, 'fact')
+    ->
+    (?a wm:hasComfortLevel wm:VeryComfortable)
+    (?f rdf:type wm:RuleFiring) (?f rdf:type prov:Activity) (?f prov:used ?a) (?f prov:qualifiedAssociation ?q)
+    (?q rdf:type prov:Association) (?q prov:agent wm:Reasoner) (?q prov:hadPlan wm:R1)
+    (?e rdf:type wm:InferredFact) (?e rdf:type prov:Entity) (?e prov:wasGeneratedBy ?f) (?e prov:wasDerivedFrom ?a) (?e rdf:value wm:VeryComfortable)
+]
+
+[R2_Comfortable:
+    (?a rdf:type wm:Travel) (?a wm:hasSeatsAvailable ?d) equal(?d, 3)
+    makeSkolem(?f, ?a, wm:R2, 'firing') makeSkolem(?q, ?a, wm:R2, 'association') makeSkolem(?e, ?a, wm:R2, 'fact')
+    ->
+    (?a wm:hasComfortLevel wm:Comfortable)
+    (?f rdf:type wm:RuleFiring) (?f rdf:type prov:Activity) (?f prov:used ?a) (?f prov:qualifiedAssociation ?q)
+    (?q rdf:type prov:Association) (?q prov:agent wm:Reasoner) (?q prov:hadPlan wm:R2)
+    (?e rdf:type wm:InferredFact) (?e rdf:type prov:Entity) (?e prov:wasGeneratedBy ?f) (?e prov:wasDerivedFrom ?a) (?e rdf:value wm:Comfortable)
+]
+
+[R3_Bearable:
+    (?a rdf:type wm:Travel) (?a wm:hasSeatsAvailable ?d) equal(?d, 2)
+    makeSkolem(?f, ?a, wm:R3, 'firing') makeSkolem(?q, ?a, wm:R3, 'association') makeSkolem(?e, ?a, wm:R3, 'fact')
+    ->
+    (?a wm:hasComfortLevel wm:Bearable)
+    (?f rdf:type wm:RuleFiring) (?f rdf:type prov:Activity) (?f prov:used ?a) (?f prov:qualifiedAssociation ?q)
+    (?q rdf:type prov:Association) (?q prov:agent wm:Reasoner) (?q prov:hadPlan wm:R3)
+    (?e rdf:type wm:InferredFact) (?e rdf:type prov:Entity) (?e prov:wasGeneratedBy ?f) (?e prov:wasDerivedFrom ?a) (?e rdf:value wm:Bearable)
+]
+
+[R4_Uncomfortable:
+    (?a rdf:type wm:Travel) (?a wm:hasSeatsAvailable ?d) le(?d, 1)
+    makeSkolem(?f, ?a, wm:R4, 'firing') makeSkolem(?q, ?a, wm:R4, 'association') makeSkolem(?e, ?a, wm:R4, 'fact')
+    ->
+    (?a wm:hasComfortLevel wm:Uncomfortable)
+    (?f rdf:type wm:RuleFiring) (?f rdf:type prov:Activity) (?f prov:used ?a) (?f prov:qualifiedAssociation ?q)
+    (?q rdf:type prov:Association) (?q prov:agent wm:Reasoner) (?q prov:hadPlan wm:R4)
+    (?e rdf:type wm:InferredFact) (?e rdf:type prov:Entity) (?e prov:wasGeneratedBy ?f) (?e prov:wasDerivedFrom ?a) (?e rdf:value wm:Uncomfortable)
+]
+
+[R5_InstantBargain:
+    (?a rdf:type wm:Travel) (?a wm:hasBookingMode "auto") (?a wm:hasCostScore ?k) ge(?k, 7.5)
+    makeSkolem(?f, ?a, wm:R5, 'firing') makeSkolem(?q, ?a, wm:R5, 'association') makeSkolem(?e, ?a, wm:R5, 'fact')
+    ->
+    (?a wm:hasTradeOff wm:InstantBargain)
+    (?f rdf:type wm:RuleFiring) (?f rdf:type prov:Activity) (?f prov:used ?a) (?f prov:qualifiedAssociation ?q)
+    (?q rdf:type prov:Association) (?q prov:agent wm:Reasoner) (?q prov:hadPlan wm:R5)
+    (?e rdf:type wm:InferredFact) (?e rdf:type prov:Entity) (?e prov:wasGeneratedBy ?f) (?e prov:wasDerivedFrom ?a) (?e rdf:value wm:InstantBargain)
+]
+
+[R6_ApprovalBargain:
+    (?a rdf:type wm:Travel) (?a wm:hasBookingMode "manual") (?a wm:hasCostScore ?k) ge(?k, 7.5)
+    makeSkolem(?f, ?a, wm:R6, 'firing') makeSkolem(?q, ?a, wm:R6, 'association') makeSkolem(?e, ?a, wm:R6, 'fact')
+    ->
+    (?a wm:hasTradeOff wm:ApprovalBargain)
+    (?f rdf:type wm:RuleFiring) (?f rdf:type prov:Activity) (?f prov:used ?a) (?f prov:qualifiedAssociation ?q)
+    (?q rdf:type prov:Association) (?q prov:agent wm:Reasoner) (?q prov:hadPlan wm:R6)
+    (?e rdf:type wm:InferredFact) (?e rdf:type prov:Entity) (?e prov:wasGeneratedBy ?f) (?e prov:wasDerivedFrom ?a) (?e rdf:value wm:ApprovalBargain)
+]
+
+[R7_ConveniencePremium:
+    (?a rdf:type wm:Travel) (?a wm:hasBookingMode "auto") (?a wm:hasCostScore ?k) lessThan(?k, 2.5)
+    makeSkolem(?f, ?a, wm:R7, 'firing') makeSkolem(?q, ?a, wm:R7, 'association') makeSkolem(?e, ?a, wm:R7, 'fact')
+    ->
+    (?a wm:hasTradeOff wm:ConveniencePremium)
+    (?f rdf:type wm:RuleFiring) (?f rdf:type prov:Activity) (?f prov:used ?a) (?f prov:qualifiedAssociation ?q)
+    (?q rdf:type prov:Association) (?q prov:agent wm:Reasoner) (?q prov:hadPlan wm:R7)
+    (?e rdf:type wm:InferredFact) (?e rdf:type prov:Entity) (?e prov:wasGeneratedBy ?f) (?e prov:wasDerivedFrom ?a) (?e rdf:value wm:ConveniencePremium)
+]
+
+[R8_ApprovalPremium:
+    (?a rdf:type wm:Travel) (?a wm:hasBookingMode "manual") (?a wm:hasCostScore ?k) lessThan(?k, 2.5)
+    makeSkolem(?f, ?a, wm:R8, 'firing') makeSkolem(?q, ?a, wm:R8, 'association') makeSkolem(?e, ?a, wm:R8, 'fact')
+    ->
+    (?a wm:hasTradeOff wm:ApprovalPremium)
+    (?f rdf:type wm:RuleFiring) (?f rdf:type prov:Activity) (?f prov:used ?a) (?f prov:qualifiedAssociation ?q)
+    (?q rdf:type prov:Association) (?q prov:agent wm:Reasoner) (?q prov:hadPlan wm:R8)
+    (?e rdf:type wm:InferredFact) (?e rdf:type prov:Entity) (?e prov:wasGeneratedBy ?f) (?e prov:wasDerivedFrom ?a) (?e rdf:value wm:ApprovalPremium)
+]

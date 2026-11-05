@@ -1,0 +1,45 @@
+{
+  "calibration": "Farajallah et al. 2019; Lambin & Palikot 2026; Blayac et al. 2026 (seats: assumption)",
+  "check": {
+    "ppk_median": 0.0622,
+    "dist_mean": 397.1,
+    "auto_rate": 0.419
+  },
+  "rq1_market": {
+    "f_C": {
+      "rho_single": 0.539,
+      "r2_from_others": 0.0,
+      "tau_without": 0.653
+    },
+    "f_K": {
+      "rho_single": 0.731,
+      "r2_from_others": 0.0,
+      "tau_without": 0.545
+    },
+    "f_B": {
+      "rho_single": 0.44,
+      "r2_from_others": 0.0,
+      "tau_without": 0.763
+    }
+  },
+  "rq2_weights": {
+    "market_tau": 0.882,
+    "market_top10": 1.0,
+    "pages100_tau": 0.882,
+    "pages100_top10": 0.852
+  },
+  "rq2_price_noise_pages100": {
+    "sigma_5": [
+      0.886,
+      0.869
+    ],
+    "sigma_10": [
+      0.788,
+      0.778
+    ],
+    "sigma_20": [
+      0.647,
+      0.647
+    ]
+  }
+}

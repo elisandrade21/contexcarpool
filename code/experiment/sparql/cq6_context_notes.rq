@@ -1,0 +1,15 @@
+# CQ6  Which context remarks apply to each offer, and which rule produced them?
+# Read from the PROV-O records of rules R9-R13, so a remark cannot appear without a firing.
+PREFIX wm:   <http://example.org/ridesharing#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?offer ?rule ?note ?label
+WHERE {
+  ?offer wm:hasContextNote ?note .
+  ?note rdfs:label ?label .
+  ?fact prov:wasDerivedFrom ?offer ; rdf:value ?note ;
+        prov:wasGeneratedBy/prov:qualifiedAssociation/prov:hadPlan ?r .
+  ?r rdfs:label ?rule .
+}
+ORDER BY ?offer ?rule

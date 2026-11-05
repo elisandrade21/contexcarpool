@@ -1,0 +1,150 @@
+@prefix wm:      <http://example.org/ridesharing#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:  <https://schema.org/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+
+# TODO: replace http://example.org/ridesharing by a persistent IRI (e.g., w3id.org) before release.
+<http://example.org/ridesharing> a owl:Ontology ;
+    owl:versionIRI <http://example.org/ridesharing/1.1.0> ;
+    owl:versionInfo "1.1.0" ;
+    dcterms:title "Ridesharing Contextual Assistance Ontology"@en ;
+    dcterms:description "Lightweight domain ontology for explainable ranking of peer-carpooling offers. General concepts are aligned with schema.org; the new module covers the derived offer properties (comfort level, cost score, booking mode, trade-off) and PROV-O provenance of rule firings."@en ;
+    dcterms:creator "Elisa de Fatima Andrade Soares", "Breno Jose Ribeiro de Vasconcelos", "Carlos Andre Guimaraes Ferraz" ;
+    dcterms:created "2026-09-29"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "wm" ;
+    vann:preferredNamespaceUri "http://example.org/ridesharing#" .
+
+###  Classes  ###########################################################
+wm:Travel         a owl:Class ; rdfs:label "Travel"@en ;
+    rdfs:comment "A carpooling offer: a trip already planned by a driver, with spare seats."@en .
+wm:Car            a owl:Class ; rdfs:label "Car"@en .
+wm:Place          a owl:Class ; rdfs:label "Place"@en .
+wm:Participant    a owl:Class ; rdfs:label "Participant"@en .
+wm:Driver         a owl:Class ; rdfs:subClassOf wm:Participant ; rdfs:label "Driver"@en .
+wm:Passenger      a owl:Class ; rdfs:subClassOf wm:Participant ; rdfs:label "Passenger"@en .
+wm:ComfortLevel   a owl:Class ; rdfs:label "ComfortLevel"@en .
+wm:TradeOff       a owl:Class ; rdfs:label "TradeOff"@en ;
+    rdfs:comment "Cost-versus-booking-convenience trade-off inferred by rules R5-R8 (explanation-level, not scored)."@en .
+
+# Pairwise disjointness (OWL 1 form, so that both OWL 1 rule reasoners such as
+# Jena's and OWL 2 DL reasoners use it).
+wm:Travel owl:disjointWith wm:Car, wm:Place, wm:Participant, wm:ComfortLevel, wm:TradeOff .
+wm:Car    owl:disjointWith wm:Place, wm:Participant .
+wm:ComfortLevel owl:disjointWith wm:TradeOff .
+
+###  Alignment with schema.org (reuse instead of re-definition)  #########
+wm:Travel      rdfs:subClassOf schema:Trip .
+wm:Car         rdfs:subClassOf schema:Car .
+wm:Place       rdfs:subClassOf schema:Place .
+wm:Participant rdfs:subClassOf schema:Person .
+
+###  Comfort levels and trade-offs (closed, pairwise distinct)  ##########
+wm:VeryComfortable a owl:NamedIndividual, wm:ComfortLevel ; rdfs:label "very comfortable"@en .
+wm:Comfortable     a owl:NamedIndividual, wm:ComfortLevel ; rdfs:label "comfortable"@en .
+wm:Bearable        a owl:NamedIndividual, wm:ComfortLevel ; rdfs:label "bearable"@en .
+wm:Uncomfortable   a owl:NamedIndividual, wm:ComfortLevel ; rdfs:label "uncomfortable"@en .
+wm:InstantBargain     a owl:NamedIndividual, wm:TradeOff ;
+    rdfs:label "among the cheapest quarter of the search and books instantly"@en .
+wm:ApprovalBargain    a owl:NamedIndividual, wm:TradeOff ;
+    rdfs:label "among the cheapest quarter of the search but requires driver approval"@en .
+wm:ConveniencePremium a owl:NamedIndividual, wm:TradeOff ;
+    rdfs:label "books instantly but is among the most expensive quarter of the search"@en .
+wm:ApprovalPremium    a owl:NamedIndividual, wm:TradeOff ;
+    rdfs:label "requires driver approval and is among the most expensive quarter of the search"@en .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( wm:VeryComfortable wm:Comfortable wm:Bearable wm:Uncomfortable
+                          wm:InstantBargain wm:ApprovalBargain wm:ConveniencePremium wm:ApprovalPremium ) .
+
+###  Object properties  ##################################################
+wm:hasParticipant   a owl:ObjectProperty ; rdfs:domain wm:Travel ; rdfs:range wm:Participant .
+wm:hasCar           a owl:ObjectProperty ; rdfs:domain wm:Travel ; rdfs:range wm:Car .
+wm:hasLocation      a owl:ObjectProperty ; rdfs:domain wm:Car ;    rdfs:range wm:Place .
+wm:isLocationOf     a owl:ObjectProperty ; owl:inverseOf wm:hasLocation .
+# Functional: an offer has one comfort level and at most one trade-off. Together with
+# owl:AllDifferent, a second (conflicting) inference makes the ontology inconsistent,
+# so an OWL consistency check verifies that the rules never fire twice per offer.
+wm:hasComfortLevel  a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range wm:ComfortLevel .
+wm:hasTradeOff      a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range wm:TradeOff .
+
+###  Datatype properties  ###############################################
+wm:hasMarket         a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:string .
+wm:hasSeatsAvailable a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:integer .
+wm:hasDistance       a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:decimal .
+wm:hasPrice          a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:decimal .
+wm:hasPricePerKm     a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:decimal .
+wm:hasBookingMode    a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:string .
+wm:hasCostScore      a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:decimal ;
+    rdfs:comment "Within-search price-per-km percentile score f_K in [0,10] (10 = cheapest)."@en .
+
+###  Provenance of inferences (PROV-O, qualified pattern)  ##############
+# Each rule is a prov:Plan. Each rule firing is a prov:Activity that used the
+# offer and is qualified by a prov:Association whose prov:hadPlan is the rule
+# and whose prov:agent is the reasoner. Each inferred fact is a prov:Entity
+# generated by the firing (prov:wasGeneratedBy), derived from the offer
+# (prov:wasDerivedFrom), whose rdf:value is the inferred comfort level or
+# trade-off. Only standard PROV-O terms are used to link these nodes.
+@prefix prov: <http://www.w3.org/ns/prov#> .
+wm:Rule         a owl:Class ; rdfs:subClassOf prov:Plan ; rdfs:label "Rule"@en .
+wm:RuleFiring   a owl:Class ; rdfs:subClassOf prov:Activity ; rdfs:label "RuleFiring"@en .
+wm:InferredFact a owl:Class ; rdfs:subClassOf prov:Entity ; rdfs:label "InferredFact"@en ;
+    rdfs:comment "An inferred comfort level or trade-off of one offer; rdf:value holds the inferred individual."@en .
+wm:Reasoner     a owl:NamedIndividual, prov:SoftwareAgent ; rdfs:label "rule engine (SPARQL 1.1 Update or Jena rules)"@en .
+
+wm:R1 a owl:NamedIndividual, wm:Rule ; rdfs:label "R1"@en ; rdfs:comment "d >= 4 -> VeryComfortable"@en .
+wm:R2 a owl:NamedIndividual, wm:Rule ; rdfs:label "R2"@en ; rdfs:comment "d = 3 -> Comfortable"@en .
+wm:R3 a owl:NamedIndividual, wm:Rule ; rdfs:label "R3"@en ; rdfs:comment "d = 2 -> Bearable"@en .
+wm:R4 a owl:NamedIndividual, wm:Rule ; rdfs:label "R4"@en ; rdfs:comment "d <= 1 -> Uncomfortable"@en .
+wm:R5 a owl:NamedIndividual, wm:Rule ; rdfs:label "R5"@en ; rdfs:comment "auto and f_K >= 7.5 -> InstantBargain"@en .
+wm:R6 a owl:NamedIndividual, wm:Rule ; rdfs:label "R6"@en ; rdfs:comment "manual and f_K >= 7.5 -> ApprovalBargain"@en .
+wm:R7 a owl:NamedIndividual, wm:Rule ; rdfs:label "R7"@en ; rdfs:comment "auto and f_K < 2.5 -> ConveniencePremium"@en .
+wm:R8 a owl:NamedIndividual, wm:Rule ; rdfs:label "R8"@en ; rdfs:comment "manual and f_K < 2.5 -> ApprovalPremium"@en .
+
+###  Device context (mobile module)  ####################################
+# Context read on the passenger's phone. It stays on the device: rules R9-R13
+# run there and only change the rationale, never the score or the order.
+wm:DeviceContext a owl:Class ; rdfs:subClassOf prov:Entity ; rdfs:label "DeviceContext"@en ;
+    rdfs:comment "Position and clock of the passenger's device at search time."@en .
+wm:ContextNote   a owl:Class ; rdfs:label "ContextNote"@en ;
+    rdfs:comment "Context-dependent remark about an offer inferred by rules R9-R13 (explanation-level, not scored)."@en .
+wm:ContextNote owl:disjointWith wm:ComfortLevel, wm:TradeOff, wm:Travel .
+wm:DeviceContext owl:disjointWith wm:Travel, wm:Place .
+wm:hasPickup       a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range wm:Place .
+wm:hasContextNote  a owl:ObjectProperty ; rdfs:domain wm:Travel ; rdfs:range wm:ContextNote .
+wm:hasDepartureMinute a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:integer ;
+    rdfs:comment "Departure time, in minutes since the Unix epoch."@en .
+wm:hasNowMinute    a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:DeviceContext ; rdfs:range xsd:integer .
+wm:hasCosLatitude  a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:DeviceContext ; rdfs:range xsd:decimal ;
+    rdfs:comment "Cosine of the device latitude, computed on the device because SPARQL 1.1 has no trigonometry."@en .
+wm:WalkablePickup a owl:NamedIndividual, wm:ContextNote ; rdfs:label "the pickup point is within walking distance"@en .
+wm:DistantPickup  a owl:NamedIndividual, wm:ContextNote ; rdfs:label "the pickup point is far from you"@en .
+wm:DepartsSoon    a owl:NamedIndividual, wm:ContextNote ; rdfs:label "it leaves within the hour"@en .
+wm:MissableOnFoot a owl:NamedIndividual, wm:ContextNote ; rdfs:label "you cannot reach the pickup on foot before it leaves"@en .
+wm:R9  a owl:NamedIndividual, wm:Rule ; rdfs:label "R9"@en  ; rdfs:comment "pickup distance <= 800 m -> WalkablePickup"@en .
+wm:R10 a owl:NamedIndividual, wm:Rule ; rdfs:label "R10"@en ; rdfs:comment "pickup distance > 5 km -> DistantPickup"@en .
+wm:R11 a owl:NamedIndividual, wm:Rule ; rdfs:label "R11"@en ; rdfs:comment "0 <= minutes to departure <= 60 -> DepartsSoon"@en .
+wm:R12 a owl:NamedIndividual, wm:Rule ; rdfs:label "R12"@en ; rdfs:comment "walking time at 5 km/h > minutes to departure -> MissableOnFoot"@en .
+wm:ReachableByCar a owl:NamedIndividual, wm:ContextNote ; rdfs:label "you can reach the pickup in time by taxi or ride-hailing"@en .
+wm:R13 a owl:NamedIndividual, wm:Rule ; rdfs:label "R13"@en ; rdfs:comment "pickup beyond 5 km or too late on foot, but car time at 25 km/h <= minutes to departure -> ReachableByCar"@en .
+
+###  Trip settlement (after the trip)  ###################################
+# Each phone (passenger's and driver's) records the distance actually travelled. Rules R14-R15 run
+# on both phones over the same two records, so both compute the same final fare or the same dispute.
+wm:TripRecord a owl:Class ; rdfs:subClassOf prov:Entity ; rdfs:label "TripRecord"@en ;
+    rdfs:comment "Distance travelled by the passenger on one offer, as recorded by one of the two phones."@en .
+wm:TripRecord owl:disjointWith wm:Travel, wm:DeviceContext .
+wm:ofOffer          a owl:ObjectProperty, owl:FunctionalProperty ; rdfs:domain wm:TripRecord ; rdfs:range wm:Travel .
+wm:recordedBy       a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:TripRecord ; rdfs:range xsd:string .
+wm:hasTravelledKm   a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:TripRecord ; rdfs:range xsd:decimal .
+wm:hasFinalFare     a owl:DatatypeProperty, owl:FunctionalProperty ; rdfs:domain wm:Travel ; rdfs:range xsd:double ;
+    rdfs:comment "Fare due after the trip: the agreed price prorated to the distance travelled, capped at the agreed price."@en .
+wm:FareDisputed a owl:NamedIndividual, wm:ContextNote ; rdfs:label "the two phones disagree on the distance travelled"@en .
+wm:R14 a owl:NamedIndividual, wm:Rule ; rdfs:label "R14"@en ; rdfs:comment "records agree within 5% of the trip -> final fare = price per km x min(trip, mean travelled)"@en .
+wm:R15 a owl:NamedIndividual, wm:Rule ; rdfs:label "R15"@en ; rdfs:comment "records differ by more than 5% of the trip -> FareDisputed"@en .
+

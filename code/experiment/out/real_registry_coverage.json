@@ -1,0 +1,15 @@
+{
+  "searches": 30,
+  "offers": 600,
+  "trips_in_sample": 15314,
+  "sampled_passenger_trips": 146,
+  "match_radius_km": 5,
+  "coverage_percent": {
+    "R9": 15.2,
+    "R10": 0.0,
+    "R11": 29.0,
+    "R12": 10.5,
+    "R13": 9.8
+  },
+  "median_distance_km": 7.6
+}

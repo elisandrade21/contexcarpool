@@ -1,0 +1,32 @@
+# CQ1  Why is each offer of a search ranked where it is?
+# Ranks the offers of one market by S = 0.4 f_C + 0.4 f_K + 0.2 f_B and builds
+# each rationale exclusively from the inferred graph: the comfort level and the
+# rule that inferred it (PROV-O firing), the stored cost score, the booking mode
+# and, if any, the inferred trade-off. ?market is bound by the caller.
+PREFIX wm:   <http://example.org/ridesharing#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+SELECT ?offer ?S ?fC ?fK ?fB ?level ?rule ?tradeRule ?mode ?tradeLabel ?rationale
+WHERE {
+  ?offer wm:hasMarket ?market ; wm:hasComfortLevel ?level ;
+         wm:hasCostScore ?fK ; wm:hasBookingMode ?mode .
+  ?fact prov:wasDerivedFrom ?offer ; rdf:value ?level ;
+        prov:wasGeneratedBy/prov:qualifiedAssociation/prov:hadPlan ?r .
+  ?r rdfs:label ?rule . ?level rdfs:label ?levelLabel .
+  VALUES (?level ?fC) { (wm:VeryComfortable 10.0) (wm:Comfortable 7.5)
+                        (wm:Bearable 5.0) (wm:Uncomfortable 2.5) }
+  OPTIONAL { ?offer wm:hasTradeOff ?t . ?t rdfs:label ?tradeLabel .
+             ?tfact prov:wasDerivedFrom ?offer ; rdf:value ?t ;
+                    prov:wasGeneratedBy/prov:qualifiedAssociation/prov:hadPlan ?tr .
+             ?tr rdfs:label ?tradeRule . }
+  BIND(IF(?mode = "auto", 10.0, 2.5) AS ?fB)
+  BIND(0.4 * ?fC + 0.4 * ?fK + 0.2 * ?fB AS ?S)
+  BIND(xsd:integer(ROUND(100 - 10 * xsd:double(?fK) + 1.0e-6)) AS ?pct)   # epsilon: same rounding of .5 ties in double and decimal engines
+  BIND(CONCAT("rule ", STR(?rule), " inferred ", STR(?levelLabel),
+              " from the available seats, the price per km lies at percentile ", STR(?pct),
+              " of the search, and booking is ", IF(?mode = "auto", "automatic", "manual"),
+              IF(BOUND(?tradeLabel), CONCAT("; ", STR(?tradeLabel)), "")) AS ?rationale)
+}
+ORDER BY DESC(?S) ?offer

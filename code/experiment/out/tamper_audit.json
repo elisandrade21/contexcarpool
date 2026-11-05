@@ -1,0 +1,21 @@
+{
+  "searches": 200,
+  "offers_per_search": 100,
+  "auditor_engine": "rdflib (SPARQL 1.1)",
+  "honest_outputs_flagged": 0,
+  "detected": {
+    "weights_changed_0.3_0.3_0.4": "200/200",
+    "weights_shifted_by_0.02": "200/200",
+    "offer_promoted_to_top": "200/200",
+    "comfort_claim_altered": "200/200",
+    "approval_requirement_hidden": "200/200",
+    "hidden_boost_5_offers": "200/200"
+  },
+  "detected_if_only_order_published": {
+    "weights_changed_0.3_0.3_0.4": "200/200",
+    "weights_shifted_by_0.02": "200/200",
+    "offer_promoted_to_top": "200/200",
+    "hidden_boost_5_offers": "200/200"
+  },
+  "auditor_median_ms": 765.1
+}

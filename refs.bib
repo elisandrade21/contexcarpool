@@ -1,0 +1,890 @@
+%% =====================================================================
+%% refs.bib, AINA-2027
+%%
+%% Citation-key convention (use in \cite{...} throughout the paper):
+%%   • Prefer ``surnameyear'' in lowercase ASCII, e.g. levinger2018, agatz2012.
+%%     Keys stay stable even when venue/year changes (levinger2018 = FGCS 2020).
+%%   • Li et al.\ PEPLER (TOIS 2023) uses key ``li2023'' (not li2023pepler).
+%%   • Two first authors: concatenate surnames, e.g. zhangchen2020, chenzhang2022.
+%%   • Corporate / standards / tools: short stable slug, e.g. jena, w3cowl2, blablacarapi.
+%%
+%% Author-field convention (BibTeX):
+%%   • ``Lastname, Firstname … and Lastname2, Firstname2 …'' (always `` and '' between authors).
+%%   • Use journal/DOI metadata for ordering; do not invent initials.
+%%
+%% Original entries kept here are CORRECTED (author names/years fixed per
+%% the bibliography audit). New entries (2020-2026) added for modernization.
+%% Duplicates from the original submission were merged.
+%% =====================================================================
+
+%% --------------------- TOOLS / STANDARDS ----------------------------
+@misc{jena,
+  author       = {{Apache Software Foundation}},
+  title        = {{Apache Jena}},
+  howpublished = {\url{https://jena.apache.org/}},
+  year         = {2024},
+  note = {}
+}
+
+@misc{w3cowl2,
+  author       = {{W3C OWL Working Group}},
+  title        = {{OWL 2} Web Ontology Language Document Overview (Second Edition)},
+  howpublished = {W3C Recommendation},
+  year         = {2012},
+  note         = {\url{https://www.w3.org/TR/owl2-overview/}}
+}
+
+@misc{blablacarapi,
+  author       = {{BlaBlaCar}},
+  title        = {{BlaBlaCar} Public {API} (v3): Developer Documentation},
+  howpublished = {\url{https://support.blablacar.com/hc/en-gb/categories/360002585239-Developer-BlaBlaCar-API}},
+  year         = {2025}
+}
+
+@misc{blablacar2024,
+  author       = {{BlaBlaCar}},
+  title        = {{BlaBlaCar} closes financing round to fuel its growth ambitions},
+  howpublished = {\url{https://newsroom.blablacar.com/news/blablacar-closes-financing-round-to-fuel-its-growth-ambitions}},
+  year         = {2024},
+  note         = {Press release, 4 April 2024}
+}
+
+%% --------------------- RIDESHARING / SHARED MOBILITY ----------------
+@article{agatz2012,
+  author  = {Agatz, Niels and Erera, Alan L. and Savelsbergh, Martin W. P. and Wang, Xing},
+  title   = {Optimization for dynamic ride-sharing: A review},
+  journal = {European Journal of Operational Research},
+  volume  = {223}, number = {2}, pages = {295--303}, year = {2012},
+  xdoi     = {10.1016/j.ejor.2012.05.028}
+}
+
+@article{furuhata2013,
+  author  = {Furuhata, Masabumi and Dessouky, Maged and Ord{\'o}{\~n}ez, Fernando and Brunet, Marc-Etienne and Wang, Xiaoqiang and Koenig, Sven},
+  title   = {Ridesharing: The state-of-the-art and future directions},
+  journal = {Transportation Research Part B: Methodological},
+  volume  = {57}, pages = {28--46}, year = {2013},
+  xdoi     = {10.1016/j.trb.2013.08.012}
+}
+
+@article{mourad2019,
+  author  = {Mourad, Abood and Puchinger, Jakob and Chu, Chengbin},
+  title   = {A survey of models and algorithms for optimizing shared mobility},
+  journal = {Transportation Research Part B: Methodological},
+  volume  = {123}, pages = {323--346}, year = {2019},
+  xdoi     = {10.1016/j.trb.2019.02.003}
+}
+
+@article{stiglic2018,
+  author  = {Stiglic, Mitja and Agatz, Niels and Savelsbergh, Martin and Gradi{\v{s}}ar, Miro},
+  title   = {Enhancing urban mobility: Integrating ride-sharing and public transit},
+  journal = {Computers \& Operations Research},
+  volume  = {90}, pages = {12--21}, year = {2018},
+  xdoi     = {10.1016/j.cor.2017.08.016}
+}
+
+@inproceedings{cici2014,
+  author    = {Cici, Blerim and Markopoulou, Athina and Frias-Martinez, Enrique and Laoutaris, Nikolaos},
+  title     = {Assessing the potential of ride-sharing using mobile and social data: A tale of four cities},
+  booktitle = {Proc. of the 2014 ACM Int. Joint Conf. on Pervasive and Ubiquitous Computing (UbiComp '14)},
+  pages     = {201--211}, year = {2014}, publisher = {ACM},
+  xdoi       = {10.1145/2632048.2632055}
+}
+
+@inproceedings{delira2019,
+  author    = {Monteiro de Lira, Vin{\'i}cius Cezar},
+  title     = {Mining human mobility data and social media for smart ride sharing},
+  booktitle = {2019 20th IEEE Int. Conf. on Mobile Data Management (MDM)},
+  pages     = {385--386}, year = {2019}, publisher = {IEEE},
+  xdoi       = {10.1109/MDM.2019.00-19}
+}
+
+@article{levinger2018,
+  author  = {Levinger, Chaya and Hazon, Noam and Azaria, Amos},
+  title   = {Human satisfaction as the ultimate goal in ridesharing},
+  journal = {Future Generation Computer Systems},
+  volume  = {112},
+  pages   = {176--184},
+  year    = {2020},
+  issn    = {0167-739X},
+  xdoi     = {10.1016/j.future.2020.05.028},
+  keywords = {Ride-sharing, Modeling human behavior, Human--agent interaction, Smart-cities},
+  note    = {Preprint: arXiv:1807.00376}
+}
+
+@article{paquette2009,
+  author  = {Paquette, Julie and Cordeau, Jean-Fran{\c{c}}ois and Laporte, Gilbert},
+  title   = {Quality of service in dial-a-ride operations},
+  journal = {Computers \& Industrial Engineering},
+  volume  = {56}, number = {4}, pages = {1721--1734}, year = {2009},
+  xdoi     = {10.1016/j.cie.2008.07.005}
+}
+
+%% Recent shared-mobility / ridesharing (2021-2024) -------------------
+@article{si2023,
+  author  = {Si, Hongyun and Shi, Jian-Gang and Hua, Wei and Cheng, Long and De Vos, Jonas and Li, Wenxiang},
+  title   = {What influences people to choose ridesharing? {An} overview of the literature},
+  journal = {Transport Reviews},
+  volume  = {43}, number = {6}, pages = {1211--1236}, year = {2023},
+  xdoi     = {10.1080/01441647.2023.2208290}
+}
+
+@article{alonso2021,
+  author  = {Alonso-Gonz{\'a}lez, Mar{\'i}a J. and Cats, Oded and van Oort, Niels and Hoogendoorn-Lanser, Sascha and Hoogendoorn, Serge},
+  title   = {What are the determinants of the willingness to share rides in pooled on-demand services?},
+  journal = {Transportation},
+  volume  = {48}, number = {4}, pages = {1733--1765}, year = {2021},
+  xdoi     = {10.1007/s11116-020-10110-2}
+}
+
+@article{gangadharaiah2025,
+  author  = {Gangadharaiah, Rakshith and Brooks, Johnell and Boor, Lisa and Kolodge, Kristin and Su, Huijing and Jia, Yunyi},
+  title   = {Pooled Rideshare in the {U.S.}: An Exploratory Study of User Preferences},
+  journal = {Vehicles},
+  volume  = {7}, number = {2}, pages = {44}, year = {2025},
+  xdoi     = {10.3390/vehicles7020044}
+}
+
+@article{magassy2024,
+  author  = {Magassy, Tassio B. and Batur, Irfan and Mondal, Aupal and Asmussen, Katherine E. and Bhat, Chandra R. and Pendyala, Ram M.},
+  title   = {Multidimensional Analysis of Willingness to Share Rides in a Future of Autonomous Vehicles},
+  journal = {Transportation Research Record},
+  volume  = {2678}, number = {6}, pages = {865--880}, year = {2024},
+  xdoi     = {10.1177/03611981231201111}
+}
+
+@article{lushi2025,
+  author  = {Lu, Kang and Shi, Chunxiao},
+  title   = {Why do travelers discontinue using integrated ride-hailing platforms? The role of perceived value and perceived risk},
+  journal = {Humanities and Social Sciences Communications},
+  volume  = {12}, number = {1}, pages = {344}, year = {2025},
+  xdoi     = {10.1057/s41599-025-04683-5}
+}
+
+@article{honglee2025,
+  author  = {Hong, Seung-Jae and Lee, Kangbok},
+  title   = {Assessing the economic value of reducing perceived risk in ride-hailing: Evidence from {US} cities},
+  journal = {Electronic Markets},
+  volume  = {35}, number = {1}, pages = {90}, year = {2025},
+  xdoi     = {10.1007/s12525-025-00850-3}
+}
+
+@article{su2026,
+  author  = {Su, Haotian and Khan, Nazmul A. and Gurumurthy, Krishna M. and Paul, Joseph and Gangadharaiah, Rakesh and Boor, Lisa and Kolodge, Kristin and Auld, Joshua and Brooks, Johnell O. and Jia, Yunyi},
+  title   = {Analyzing users' preferences between personal and pooled rideshare services using a mixed logit modeling approach},
+  journal = {Transportation},
+  year    = {2026},
+  xdoi     = {10.1007/s11116-025-10714-6},
+  note    = {Online first (Springer Nature, 9 Jan.\ 2026). Update volume, issue, and page range when the issue closes.}
+}
+
+@article{bruglieri2023,
+  author  = {Bruglieri, Maurizio and Pisacane, Ornella},
+  title   = {A survey on emergent trends in the optimization of car-sharing systems},
+  journal = {International Transactions in Operational Research},
+  volume  = {30}, number = {6}, pages = {2867--2908}, year = {2023},
+  xdoi     = {10.1111/itor.13315}
+}
+
+@article{martinez2024,
+  author  = {Martinez, Luis M. and Pritchard, John P. and Crist, Philippe},
+  title   = {Shared Mobility's Role in Sustainable Mobility: Past, Present, and Future},
+  journal = {Annual Review of Environment and Resources},
+  volume  = {49}, pages = {191--222}, year = {2024},
+  xdoi     = {10.1146/annurev-environ-121522-041916}
+}
+
+%% --------------------- CONTEXT MODELING / AWARENESS -----------------
+@article{bettini2010,
+  author  = {Bettini, Claudio and Brdiczka, Oliver and Henricksen, Karen and Indulska, Jadwiga and Nicklas, Daniela and Ranganathan, Anand and Riboni, Daniele},
+  title   = {A survey of context modelling and reasoning techniques},
+  journal = {Pervasive and Mobile Computing},
+  volume  = {6}, number = {2}, pages = {161--180}, year = {2010},
+  xdoi     = {10.1016/j.pmcj.2009.06.002}
+}
+
+@article{dey2001,
+  author  = {Dey, Anind K.},
+  title   = {Understanding and using context},
+  journal = {Personal and Ubiquitous Computing},
+  volume  = {5}, number = {1}, pages = {4--7}, year = {2001},
+  xdoi     = {10.1007/s007790170019}
+}
+
+@inproceedings{strang2004,
+  author    = {Strang, Thomas and Linnhoff-Popien, Claudia},
+  title     = {A Context Modeling Survey},
+  booktitle = {Workshop on Advanced Context Modelling, Reasoning and Management, UbiComp 2004},
+  year      = {2004},
+  publisher = {University of Nottingham},
+  pages     = {1--14},
+  numpages  = {14}
+}
+
+@article{perera2014,
+  author  = {Perera, Charith and Zaslavsky, Arkady and Christen, Peter and Georgakopoulos, Dimitrios},
+  title   = {Context Aware Computing for the Internet of Things: A Survey},
+  journal = {IEEE Communications Surveys \& Tutorials},
+  volume  = {16}, number = {1}, pages = {414--454}, year = {2014},
+  xdoi     = {10.1109/SURV.2013.042313.00197}
+}
+
+@inproceedings{zimmermann2007,
+  author    = {Zimmermann, Andreas and Lorenz, Andreas and Oppermann, Reinhard},
+  title     = {An Operational Definition of Context},
+  booktitle = {Modeling and Using Context (CONTEXT 2007)},
+  series    = {LNCS}, volume = {4635}, pages = {558--571}, year = {2007},
+  publisher = {Springer},
+  xdoi = {10.1007/978-3-540-74255-5_42}
+}
+
+@article{vieira2011,
+  author  = {Vieira, Vaninha and Tedesco, Patricia and Salgado, Ana Carolina},
+  title   = {Designing context-sensitive systems: An integrated approach},
+  journal = {Expert Systems with Applications},
+  volume  = {38}, number = {2}, pages = {1119--1138}, year = {2011},
+  xdoi     = {10.1016/j.eswa.2010.05.006}
+}
+
+@article{vieira2008,
+  author  = {Vieira, Vaninha and Br{\'e}zillon, Patrick and Salgado, Ana Carolina and Tedesco, Patr{\'i}cia A.},
+  title   = {A Context-Oriented Model for Domain-Independent Context Management},
+  journal = {Revue d'Intelligence Artificielle},
+  volume  = {22}, number = {5}, pages = {609--627}, year = {2008},
+  xdoi     = {10.3166/ria.22.609-627}
+}
+
+@inproceedings{souza2008,
+  author    = {Souza, Damires and Belian, Rosalie and Salgado, Ana Carolina and Tedesco, Patr{\'i}cia A.},
+  title     = {Towards a Context Ontology to Enhance Data Integration Processes},
+  booktitle = {Proc. of the 4th Workshop on Ontologies-Based Techniques for Databases in Information Systems and Knowledge Systems (ODBIS)},
+  pages     = {49--56}, year = {2008},
+  publisher = {CEUR-WS.org},
+}
+
+@inproceedings{mirisaee2011,
+  author    = {Mirisaee, Seyed Hadi and Brereton, Margot and Roe, Paul},
+  title     = {Bridging the representation and interaction challenges of mobile context-aware computing: Designing agile ridesharing},
+  booktitle = {Proc. of the 23rd Australian Computer-Human Interaction Conf. (OzCHI '11)},
+  pages     = {221--224}, year = {2011}, publisher = {ACM},
+  xdoi       = {10.1145/2071536.2071571}
+}
+
+@article{chang2017,
+  author  = {Chang, Jingkun and Yao, Wenbin and Li, Xiaoyong},
+  title   = {The design of a context-aware service system in intelligent transportation system},
+  journal = {International Journal of Distributed Sensor Networks},
+  volume  = {13}, number = {10}, year = {2017},
+  pages   = {155014771773816},
+  numpages = {14},
+  xdoi     = {10.1177/1550147717738165}
+}
+
+%% Recent context-aware recommender systems ---------------------------
+@article{mateos2024,
+  author  = {Mateos, Pablo and Bellog{\'i}n, Alejandro},
+  title   = {A systematic literature review of recent advances on context-aware recommender systems},
+  journal = {Artificial Intelligence Review},
+  volume  = {58}, number = {1}, year = {2025},
+  articleno = {20},
+  pages   = {1--149},
+  numpages = {149},
+  xdoi     = {10.1007/s10462-024-10939-4}
+}
+
+@article{meng2023,
+  author  = {Meng, Xiangfu and Du, Yunhai and Zhang, Yan and Han, Xiaoyan},
+  title   = {A Survey of Context-Aware Recommender Systems: From an Evaluation Perspective},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  volume  = {35}, number = {7}, pages = {6575--6594}, year = {2023},
+  xdoi     = {10.1109/TKDE.2022.3187434}
+}
+
+%% --------------------- EXPLAINABLE RECOMMENDATION / XAI -------------
+@article{zhangchen2020,
+  author  = {Zhang, Yongfeng and Chen, Xu},
+  title   = {Explainable Recommendation: A Survey and New Perspectives},
+  journal = {Foundations and Trends in Information Retrieval},
+  volume  = {14}, number = {1}, pages = {1--101}, year = {2020},
+  xdoi     = {10.1561/1500000066}
+}
+
+@incollection{tintarev2011,
+  author    = {Tintarev, Nava and Masthoff, Judith},
+  title     = {Designing and Evaluating Explanations for Recommender Systems},
+  booktitle = {Recommender Systems Handbook},
+  pages     = {479--510}, year = {2011}, publisher = {Springer},
+  xdoi       = {10.1007/978-0-387-85820-3_15}
+}
+
+@misc{chenzhang2022,
+  author = {Chen, Xu and Zhang, Yongfeng and Wen, Ji-Rong},
+  title  = {Measuring {``}Why{''} in Recommender Systems: a Comprehensive Survey on the Evaluation of Explainable Recommendation},
+  year   = {2022},
+  eprint = {2202.06466},
+  archivePrefix = {arXiv},
+  note   = {IJCAI 2022 Survey Track. https://arxiv.org/abs/2202.06466}
+}
+
+@inproceedings{xian2019,
+  author    = {Xian, Yikun and Fu, Zuohui and Muthukrishnan, S. and de Melo, Gerard and Zhang, Yongfeng},
+  title     = {Reinforcement Knowledge Graph Reasoning for Explainable Recommendation},
+  booktitle = {Proc. of the 42nd Int. ACM SIGIR Conf. on Research and Development in Information Retrieval},
+  pages     = {285--294}, year = {2019}, publisher = {ACM},
+  xdoi       = {10.1145/3331184.3331203}
+}
+
+@article{balloccu2023,
+  author  = {Balloccu, Giacomo and Boratto, Ludovico and Fenu, Gianni and Marras, Mirko},
+  title   = {Reinforcement recommendation reasoning through knowledge graphs for explanation path quality},
+  journal = {Knowledge-Based Systems},
+  volume  = {260}, pages = {110098}, year = {2023},
+  xdoi     = {10.1016/j.knosys.2022.110098}
+}
+
+@article{li2023,
+  author  = {Li, Lei and Zhang, Yongfeng and Chen, Li},
+  title   = {Personalized Prompt Learning for Explainable Recommendation},
+  journal = {ACM Transactions on Information Systems},
+  volume  = {41}, number = {4}, articleno = {103}, year = {2023},
+  pages   = {1--35},
+  numpages = {35},
+  xdoi     = {10.1145/3580488}
+}
+
+@inproceedings{tan2021,
+  author    = {Tan, Juntao and Xu, Shuyuan and Ge, Yingqiang and Li, Yunqi and Chen, Xu and Zhang, Yongfeng},
+  title     = {Counterfactual Explainable Recommendation},
+  booktitle = {Proc. of the 30th ACM Int. Conf. on Information \& Knowledge Management (CIKM '21)},
+  pages     = {1784--1793}, year = {2021}, publisher = {ACM},
+  xdoi       = {10.1145/3459637.3482420}
+}
+
+@article{said2025,
+  author  = {Said, Alan},
+  title   = {On explaining recommendations with large language models: a review},
+  journal = {Frontiers in Big Data},
+  volume  = {7}, pages = {1505{}284}, year = {2025},
+  xdoi     = {10.3389/fdata.2024.1505284}
+}
+
+%% --------------------- KNOWLEDGE GRAPHS / ONTOLOGIES (mobility) -----
+@article{intana2026,
+  author  = {Intana, Adisak and Tantayakul, Kuljaree and Tanthavanich, Wasupon and Chumchuay, Wachiravit},
+  title   = {An Ontology-Driven Framework for Personalised Context-Aware Running Event Recommendations},
+  journal = {Computers},
+  volume  = {15}, number = {3}, pages = {195}, year = {2026},
+  xdoi     = {10.3390/computers15030195}
+}
+
+@article{scrocca2023,
+  author  = {Scrocca, Mario and Baroni, Ilaria and Celino, Irene},
+  title   = {Urban {IoT} ontologies for sharing and electric mobility},
+  journal = {Semantic Web},
+  volume  = {14}, number = {4}, pages = {617--638}, year = {2023},
+  xdoi     = {10.3233/SW-210445}
+}
+
+@incollection{wagih2020,
+  author    = {Wagih, Heba M. and Mokhtar, Hoda M. O.},
+  title     = {Ridology: An Ontology Model for Exploring Human Behavior Trajectories in Ridesharing Applications},
+  booktitle = {Recent Advances in Intelligent Systems and Smart Applications},
+  series    = {SSDC}, volume = {295},
+  pages     = {553--567}, year = {2021}, publisher = {Springer},
+  xdoi       = {10.1007/978-3-030-47411-9_30}
+}
+
+@article{lee2023,
+  author  = {Lee, Jeongmin and Song, Junseok},
+  title   = {Towards Semantic Smart Cities: A Study on the Conceptualization and Implementation of Semantic Context Inference Systems},
+  journal = {Sensors},
+  volume  = {23}, number = {23}, pages = {9392}, year = {2023},
+  xdoi     = {10.3390/s23239392}
+}
+
+@article{zhangmkg2023,
+  author  = {Zhang, Qiang and Ma, Zhenliang and Zhang, Pengfei and Jenelius, Erik},
+  title   = {Mobility knowledge graph: review and its application in public transport},
+  journal = {Transportation},
+  volume  = {52}, number = {3}, pages = {1119--1145}, year = {2025},
+  xdoi     = {10.1007/s11116-023-10451-8}
+}
+
+@article{htun2024,
+  author  = {Htun, Su Nandar Nyein and Fukuda, Ken},
+  title   = {Integrating Knowledge Graphs into Autonomous Vehicle Technologies: A Survey of Current State and Future Directions},
+  journal = {Information},
+  volume  = {15}, number = {10}, pages = {645}, year = {2024},
+  xdoi     = {10.3390/info15100645}
+}
+
+@article{guo2022,
+  author  = {Guo, Qingyu and Zhuang, Fuzhen and Qin, Chuan and Zhu, Hengshu and Xie, Xing and Xiong, Hui and He, Qing},
+  title   = {A Survey on Knowledge Graph-Based Recommender Systems},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  volume  = {34}, number = {8}, pages = {3549--3568}, year = {2022},
+  xdoi     = {10.1109/TKDE.2020.3028705}
+}
+
+@article{delong2025,
+  author  = {DeLong, Lauren Nicole and Fern{\'a}ndez Mir, Ramon and Fleuriot, Jacques D.},
+  title   = {Neurosymbolic {AI} for Reasoning Over Knowledge Graphs: A Survey},
+  journal = {IEEE Transactions on Neural Networks and Learning Systems},
+  volume  = {36}, number = {5}, pages = {7822--7842}, year = {2025},
+  xdoi     = {10.1109/TNNLS.2024.3420218}
+}
+
+@article{ling2026,
+  author  = {Ling, Yan and Qin, Zhen and Ma, Zhenliang},
+  title   = {A review of knowledge graph construction using large language models in transportation: Problems, methods, and challenges},
+  journal = {Transportation Research Part C: Emerging Technologies},
+  volume  = {183}, pages = {105428}, year = {2026},
+  xdoi     = {10.1016/j.trc.2025.105428}
+}
+
+@article{cho2013,
+  author  = {Cho, Sungjin and Kang, Jeon-Young and Yasar, Ansar-Ul-Haque and Knapen, Luk and Bellemans, Tom and Janssens, Davy and Wets, Geert and Hwang, Chul-Sue},
+  title   = {An activity-based carpooling microsimulation using ontology},
+  journal = {Procedia Computer Science},
+  volume  = {19}, pages = {48--55}, year = {2013},
+  xdoi     = {10.1016/j.procs.2013.06.012}
+}
+
+%% --------------------- MULTI-CRITERIA AGGREGATION / OWA -------------
+@article{yager1988,
+  author  = {Yager, Ronald R.},
+  title   = {On ordered weighted averaging aggregation operators in multicriteria decisionmaking},
+  journal = {IEEE Transactions on Systems, Man, and Cybernetics},
+  volume  = {18}, number = {1}, pages = {183--190}, year = {1988},
+  xdoi     = {10.1109/21.87068}
+}
+
+@article{figuerola2024,
+  author  = {Figuerola-Wischke, Andr{\'e}s and Merig{\'o}, Jos{\'e} M. and Gil-Lafuente, Anna M. and Boria-Reverter, Sefa},
+  title   = {A Bibliometric Review of the Ordered Weighted Averaging Operator},
+  journal = {Mathematics},
+  volume  = {12}, number = {7}, pages = {1053}, year = {2024},
+  xdoi     = {10.3390/math12071053}
+}
+
+@incollection{adomavicius2011,
+  author    = {Adomavicius, Gediminas and Manouselis, Nikos and Kwon, YoungOk},
+  title     = {Multi-Criteria Recommender Systems},
+  booktitle = {Recommender Systems Handbook},
+  pages     = {769--803}, year = {2011}, publisher = {Springer},
+  xdoi       = {10.1007/978-0-387-85820-3_24}
+}
+
+%% --------------------- COLLABORATIVE SYSTEMS ------------------------
+@book{fuks2011,
+  author    = {Fuks, Hugo and Pimentel, Mariano},
+  title     = {Sistemas Colaborativos},
+  year      = {2011}, publisher = {Elsevier/Campus}
+}
+
+@inproceedings{hassani2018context,
+  author    = {Hassani, Alireza and Medvedev, Alexey and Delir Haghighi, Pari and Ling, Sea and Indrawan-Santiago, Maria and Zaslavsky, Arkady and Jayaraman, Prem Prakash},
+  title     = {Context-as-a-Service Platform: Exchange and Share Context in an {IoT} Ecosystem},
+  booktitle = {IEEE PerCom Workshops},
+  pages     = {385--390}, year = {2018}, publisher = {IEEE},
+  xdoi       = {10.1109/PERCOMW.2018.8480240}
+}
+
+@misc{euomnibus2019,
+  author       = {{European Union}},
+  title        = {Directive ({EU}) 2019/2161 on the better enforcement and modernisation of {Union} consumer protection rules ({Omnibus Directive})},
+  howpublished = {OJ L 328, 18.12.2019},
+  year         = {2019},
+  note         = {\url{http://data.europa.eu/eli/dir/2019/2161/oj}}
+}
+
+@misc{eudsa2022,
+  author       = {{European Union}},
+  title        = {Regulation ({EU}) 2022/2065 ({Digital Services Act}), Art. 27: Recommender system transparency},
+  howpublished = {OJ L 277, 27.10.2022},
+  year         = {2022},
+  note         = {\url{http://data.europa.eu/eli/reg/2022/2065/oj}}
+}
+
+@book{nielsen1993,
+  author    = {Nielsen, Jakob},
+  title     = {Usability Engineering},
+  publisher = {Academic Press},
+  year      = {1993}
+}
+
+%% ---- Added for AINA-2027 (verified 2024-2026 survey, docs/levantamento_2024_2026.md) ----
+
+@article{Blayac2026ShareRide,
+  author  = {Blayac, Thierry and Bougette, Patrice and Duberga, Jules},
+  title   = {Share the ride: The determinants of long-distance carpooling pricing strategies in {France}},
+  journal = {Transportation Research Part A: Policy and Practice},
+  volume  = {204},
+  pages   = {104{}764},
+  year    = {2026},
+  xdoi     = {10.1016/j.tra.2025.104764}
+}
+
+@article{Psaraftis2024QERide,
+  author  = {Psaraftis, Konstantinos and Ntalianis, Klimis S. and Mastorakis, Nikos E.},
+  title   = {Quality of Experience Oriented Eco-Friendly Taxi-Ride Sharing Recommendation Framework},
+  journal = {IEEE Access},
+  volume  = {12},
+  pages   = {155{}915--155{}942},
+  year    = {2024},
+  xdoi     = {10.1109/ACCESS.2024.3485221}
+}
+
+@article{Zhou2025RideSharingRec,
+  author  = {Zhou, Qian and Wu, Jiayang and Dai, Hua and Yang, Geng and Zhang, Yanchun},
+  title   = {An Intelligent Ride-Sharing Recommendation Method Based on Graph Neural Network and Evolutionary Computation},
+  journal = {IEEE Transactions on Intelligent Transportation Systems},
+  volume  = {26},
+  number  = {1},
+  pages   = {569--578},
+  year    = {2025},
+  xdoi     = {10.1109/TITS.2024.3485985}
+}
+
+@inproceedings{Paiva2024Discrimination,
+  author    = {Paiva, Raquel T. de and Cataldo, Wendy S. and Garcia, Ana Cristina B. and de Mello, Carlos E.},
+  title     = {Digital discrimination detection in ridesharing services},
+  booktitle = {Anais do XIX Simp{\'o}sio Brasileiro de Sistemas Colaborativos (SBSC 2024)},
+  pages     = {183--191},
+  publisher = {Sociedade Brasileira de Computa{\c{c}}{\~a}o},
+  year      = {2024},
+  xdoi       = {10.5753/sbsc.2024.238064}
+}
+
+@article{Erwig2025ExplainingMCDM,
+  author  = {Erwig, Martin and Kumar, Prashant},
+  title   = {Explaining Results of Multi-Criteria Decision-Making},
+  journal = {Journal of Multi-Criteria Decision Analysis},
+  volume  = {32},
+  number  = {1},
+  pages   = {e70{}011},
+  year    = {2025},
+  xdoi     = {10.1002/mcda.70011}
+}
+
+@inproceedings{Parcalabescu2024Faithfulness,
+  author    = {Parcalabescu, Letitia and Frank, Anette},
+  title     = {On Measuring Faithfulness or Self-consistency of Natural Language Explanations},
+  booktitle = {Proc. 62nd Annual Meeting of the ACL},
+  pages     = {6048--6089},
+  publisher = {Association for Computational Linguistics},
+  year      = {2024},
+  xdoi       = {10.18653/v1/2024.acl-long.329}
+}
+
+@incollection{Falanga2024MaaS,
+  author    = {Falanga, Antonella and Henke, Ilaria and Cartenì, Armando},
+  title     = {Empowering Sustainable Mobility: Exploring {MaaS} as a Big Data Application in Transportation Planning},
+  booktitle = {Proc. AINA-2024},
+  series    = {LNDECT},
+  pages     = {224--233},
+  publisher = {Springer},
+  year      = {2024},
+  xdoi       = {10.1007/978-3-031-57931-8_22}
+}
+
+@incollection{Jenevain2024ContextOntology,
+  author    = {Jenevain, Matheus B. and Pinto, Milena F. and Dantas, Mario A. R. and Villela, Regina M. M. B. and David, Jos{\'e} M. N. and Menezes, Victor S. A.},
+  title     = {Enabling Intelligent Data Exchange in the {Brazilian} Energy Sector: A Context-Aware Ontological Approach},
+  booktitle = {Proc. AINA-2024},
+  series    = {LNDECT},
+  pages     = {372--381},
+  publisher = {Springer},
+  year      = {2024},
+  xdoi       = {10.1007/978-3-031-57840-3_34}
+}
+
+@article{Kalidas2026ELSA,
+  author  = {Kalidas, Varsha and Rossanez, Anderson and Regino, Andre and dos Reis, Julio and Torres, Ricardo},
+  title   = {{ELSA}-Compliant Explainable Recommender Systems},
+  journal = {ACM Transactions on Recommender Systems},
+  volume  = {5},
+  number  = {1},
+  pages   = {1--40},
+  year    = {2026},
+  xdoi     = {10.1145/3797875}
+}
+
+@article{Laroche2026,
+  author  = {Laroche, Florent and Schemeleva, Kseniya},
+  title   = {Exploratory study of long-distance carpooling supply and public financial incentives: The case of {France}},
+  journal = {Research in Transportation Economics},
+  volume  = {116},
+  pages   = {101{}734},
+  year    = {2026},
+  xdoi     = {10.1016/j.retrec.2026.101734}
+}
+
+@misc{w3cprov2013,
+  author       = {Lebo, Timothy and Sahoo, Satya and McGuinness, Deborah},
+  title        = {{PROV-O}: The {PROV} Ontology},
+  howpublished = {W3C Recommendation},
+  year         = {2013},
+  note         = {\url{https://www.w3.org/TR/prov-o/}}
+}
+
+@misc{w3cshacl2017,
+  author       = {Knublauch, Holger and Kontokostas, Dimitris},
+  title        = {Shapes Constraint Language ({SHACL})},
+  howpublished = {W3C Recommendation},
+  year         = {2017},
+  note         = {\url{https://www.w3.org/TR/shacl/}}
+}
+
+@misc{w3csparql2013,
+  author       = {Harris, Steve and Seaborne, Andy},
+  title        = {{SPARQL} 1.1 Query Language},
+  howpublished = {W3C Recommendation},
+  year         = {2013},
+  note         = {\url{https://www.w3.org/TR/sparql11-query/}}
+}
+
+@inproceedings{katsumi2019,
+  author    = {Katsumi, Megan and Fox, Mark},
+  title     = {An Ontology-Based Standard for Transportation Planning},
+  booktitle = {JOWO 2019},
+  series    = {CEUR-WS},
+  volume    = {2518},
+  year      = {2019},
+}
+
+
+%% ---- AINA papers (docs/padroes_aina_aceitos.md) ----
+
+@incollection{Amara2024ContextForecast,
+  author    = {Amar{\'a}, Jefferson and Str{\"o}ele, Victor and Braga, Regina and David, Jos{\'e} Maria N.},
+  title     = {From Context to Forecast: Ontology-Based Data Integration and {AI} for Events Prediction},
+  booktitle = {Proc. AINA-2024},
+  series    = {LNDECT},
+  volume    = {201},
+  pages     = {349--361},
+  publisher = {Springer},
+  year      = {2024},
+  xdoi       = {10.1007/978-3-031-57870-0_31}
+}
+
+@incollection{Soki2024RESTSemantic,
+  author    = {Soki, Alberto Tuti and Siqueira, Frank},
+  title     = {Discovery of {RESTful} Web Services Based on the {OpenAPI} 3.0 Standard with Semantic Annotations},
+  booktitle = {Proc. AINA-2024},
+  series    = {LNDECT},
+  volume    = {200},
+  pages     = {22--34},
+  publisher = {Springer},
+  year      = {2024},
+  xdoi       = {10.1007/978-3-031-57853-3_3}
+}
+
+@incollection{Amato2026SemanticArchival,
+  author    = {Amato, Alba and Cirillo, Giuseppe},
+  title     = {A Semantic and Service-Oriented Platform for Integrating Multi-Source Archival Data: The Case of the {Rivista Storica Italiana} Archive},
+  booktitle = {Proc. AINA-2026},
+  series    = {LNDECT},
+  volume    = {300},
+  pages     = {13--22},
+  publisher = {Springer},
+  year      = {2026},
+  xdoi       = {10.1007/978-3-032-23341-7_2}
+}
+
+@article{barron1996,
+  author  = {Barron, F. Hutton and Barrett, Bruce E.},
+  title   = {Decision Quality Using Ranked Attribute Weights},
+  journal = {Management Science},
+  volume  = {42}, number = {11}, pages = {1515--1523}, year = {1996},
+  xdoi     = {10.1287/mnsc.42.11.1515}
+}
+
+@article{diakoulaki1995,
+  author  = {Diakoulaki, D. and Mavrotas, G. and Papayannakis, L.},
+  title   = {Determining objective weights in multiple criteria problems: The {CRITIC} method},
+  journal = {Computers \& Operations Research},
+  volume  = {22}, number = {7}, pages = {763--770}, year = {1995},
+  xdoi     = {10.1016/0305-0548(94)00059-H}
+}
+
+
+@inproceedings{Hsieh2017CarPooling,
+  author    = {Hsieh, Fu-Shiung},
+  title     = {Car Pooling Based on Trajectories of Drivers and Requirements of Passengers},
+  booktitle = {Proc. AINA-2017},
+  pages     = {972--978},
+  publisher = {IEEE},
+  year      = {2017},
+  xdoi       = {10.1109/AINA.2017.41}
+}
+
+@incollection{Liu2021SemanticTrajectory,
+  author    = {Liu, Chun and Li, Xin},
+  title     = {Mining Method Based on Semantic Trajectory Frequent Pattern},
+  booktitle = {Proc. AINA-2021},
+  series    = {LNNS},
+  volume    = {226},
+  pages     = {146--159},
+  publisher = {Springer},
+  year      = {2021},
+  xdoi       = {10.1007/978-3-030-75075-6_12}
+}
+
+@inproceedings{Amato2017VisitingPath,
+  author    = {Amato, Flora and Cozzolino, Giovanni and Moscato, Vincenzo and Picariello, Antonio and Sperl{\`\i}, Giancarlo},
+  title     = {Automatic Personalization of Visiting Path Based on Users Behaviour},
+  booktitle = {Proc. WAINA-2017},
+  pages     = {692--697},
+  publisher = {IEEE},
+  year      = {2017},
+  xdoi       = {10.1109/WAINA.2017.137}
+}
+
+@article{farajallah2019,
+  author  = {Farajallah, Mehdi and Hammond, Robert G. and P{\'e}nard, Thierry},
+  title   = {What drives pricing behavior in Peer-to-Peer markets? {Evidence} from the carsharing platform {BlaBlaCar}},
+  journal = {Information Economics and Policy},
+  volume  = {48}, pages = {15--31}, year = {2019},
+  xdoi     = {10.1016/j.infoecopol.2019.01.002}
+}
+
+@misc{lambin2026,
+  author       = {Lambin, Xavier and Palikot, Emil},
+  title        = {Fighting discrimination with reputation: The case of online platforms},
+  howpublished = {arXiv:2607.05627},
+  year         = {2026}
+}
+
+%% ---- Added in the AINA-2027 rebuttal round (verified via Crossref / W3C, 2026-10-29) ----
+@article{mcguinness2004,
+  author  = {McGuinness, Deborah L. and Pinheiro da Silva, Paulo},
+  title   = {Explaining Answers from the {Semantic Web}: The {Inference Web} Approach},
+  journal = {Journal of Web Semantics},
+  volume  = {1},
+  number  = {4},
+  pages   = {397--413},
+  year    = {2004},
+  xdoi     = {10.1016/j.websem.2004.06.002}
+}
+
+@inproceedings{raji2020,
+  author    = {Raji, Inioluwa Deborah and Smart, Andrew and White, Rebecca N. and Mitchell, Margaret and Gebru, Timnit and Hutchinson, Ben and others},
+  title     = {Closing the {AI} Accountability Gap: Defining an End-to-End Framework for Internal Algorithmic Auditing},
+  booktitle = {Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency (FAT*)},
+  pages     = {33--44},
+  year      = {2020},
+  xdoi       = {10.1145/3351095.3372873}
+}
+
+@misc{w3cshaclaf,
+  author       = {Knublauch, Holger and Allemang, Dean and Steyskal, Simon},
+  title        = {{SHACL} Advanced Features},
+  howpublished = {W3C Working Group Note, \url{https://www.w3.org/TR/shacl-af/}},
+  year         = {2017}
+}
+
+
+%% ---- Mobile module (metadata checked on Crossref or in the open PDF, 2026-11-05) ----
+@inproceedings{Lee2020ContextRec,
+  author    = {Lee, Jaehun and Hwang, Taeho and Park, Jungho and Lee, Yunsu and Motik, Boris and Horrocks, Ian},
+  title     = {A Context-aware Recommendation System for Mobile Devices},
+  booktitle = {ISWC 2020 Demos and Industry Tracks, CEUR-WS Vol.~2721},
+  year      = {2020},
+}
+@inproceedings{Crocker2025Pocket,
+  author    = {Crocker, Peter and Horrocks, Ian and Nenov, Yavor},
+  title     = {Semantic Technology in Your Pocket},
+  booktitle = {ISWC 2025 Companion, CEUR-WS Vol.~4085},
+  pages     = {17--19},
+  year      = {2025},
+}
+@incollection{Loseto2024TinyME,
+  author    = {Loseto, Giuseppe and Bilenchi, Ivano and Gramegna, Filippo and Loconte, Davide and Scioscia, Floriano and Ruta, Michele},
+  title     = {{Tiny-ME} {Wasm}: Description Logics Reasoning in Your Browser},
+  booktitle = {Current Trends in Web Engineering, CCIS},
+  pages     = {114--126},
+  publisher = {Springer},
+  year      = {2024},
+  xdoi      = {10.1007/978-3-031-50385-6_10}
+}
+@incollection{Gramegna2023RideMATCHain,
+  author    = {Gramegna, Filippo and Tomasino, Arnaldo and Loseto, Giuseppe and Scioscia, Floriano and Ruta, Michele},
+  title     = {Features and Capabilities of a Blockchain-Based Ridesharing Enhanced with Semantics},
+  booktitle = {Current Trends in Web Engineering, CCIS},
+  pages     = {113--124},
+  publisher = {Springer},
+  year      = {2023},
+  xdoi      = {10.1007/978-3-031-25380-5_9}
+}
+@inproceedings{Terdjimi2015HyLAR,
+  author    = {Terdjimi, Mehdi and M{\'e}dini, Lionel and Mrissa, Michael},
+  title     = {{HyLAR}: Hybrid Location-Agnostic Reasoning},
+  booktitle = {ESWC Developers Workshop, CEUR-WS Vol.~1361},
+  pages     = {1--6},
+  year      = {2015},
+}
+@incollection{Braun2026ZkSparql,
+  author    = {Braun, Christoph H.-J. and Wright, Jesse and K{\"a}fer, Tobias},
+  title     = {Proving Soundness of {SPARQL} Query Results Using Selective Disclosure of {RDF} Datasets and Zero-Knowledge Proofs},
+  booktitle = {The Semantic Web, LNCS},
+  pages     = {297--318},
+  publisher = {Springer},
+  year      = {2026},
+  xdoi      = {10.1007/978-3-032-25156-5_16}
+}
+
+@misc{rpc2026,
+  author       = {{Registre de preuve de covoiturage}},
+  title        = {Trajets r{\'e}alis{\'e}s en covoiturage, {October} 2026},
+  howpublished = {data.gouv.fr, Licence Ouverte},
+  year         = {2026},
+  note         = {\url{https://www.data.gouv.fr/datasets/trajets-realises-en-covoiturage-registre-de-preuve-de-covoiturage}}
+}
+
+@misc{w3cupdate2013,
+  author       = {Gearon, Paula and Passant, Alexandre and Polleres, Axel},
+  title        = {{SPARQL} 1.1 Update},
+  howpublished = {W3C Recommendation},
+  year         = {2013},
+  note         = {\url{https://www.w3.org/TR/sparql11-update/}}
+}
+@misc{w3crif2013,
+  author       = {Boley, Harold and Hallmark, Gary and Kifer, Michael and Paschke, Adrian and Polleres, Axel and Reynolds, Dave},
+  title        = {{RIF} Core Dialect (Second Edition)},
+  howpublished = {W3C Recommendation},
+  year         = {2013},
+  note         = {\url{https://www.w3.org/TR/rif-core/}}
+}
+
+@inproceedings{Yang2018RankingFacts,
+  author    = {Yang, Ke and Stoyanovich, Julia and Asudeh, Abolfazl and Howe, Bill and Jagadish, H. V. and Miklau, Gerome},
+  title     = {A Nutritional Label for Rankings},
+  booktitle = {Proc. SIGMOD 2018},
+  pages     = {1773--1776},
+  publisher = {ACM},
+  year      = {2018},
+  xdoi      = {10.1145/3183713.3193568}
+}
+@incollection{Hendriksen2026OpenIndex,
+  author    = {Hendriksen, Gijs and Hiemstra, Djoerd and de Vries, Arjen P.},
+  title     = {Open Web Indexes for Remote Querying},
+  booktitle = {Advances in Information Retrieval (ECIR 2026), LNCS},
+  pages     = {386--402},
+  publisher = {Springer},
+  year      = {2026},
+  xdoi      = {10.1007/978-3-032-21289-4_25}
+}
+@misc{vanEck2024Leiden,
+  author       = {van Eck, Nees Jan and Waltman, Ludo and Neijssel, Mark},
+  title        = {Launch of the {CWTS} {Leiden} {Ranking} {Open} {Edition} 2024},
+  howpublished = {Leiden Madtrics blog, doi:10.59350/r512t-r8h93},
+  year         = {2024}
+}
+
+@article{Baza2021BRide,
+  author  = {Baza, Mohamed and Lasla, Noureddine and Mahmoud, Mohamed M. E. A. and Srivastava, Gautam and Abdallah, Mohamed},
+  title   = {{B-Ride}: Ride Sharing With Privacy-Preservation, Trust and Fair Payment Atop Public Blockchain},
+  journal = {IEEE Transactions on Network Science and Engineering},
+  volume  = {8}, number = {2}, pages = {1214--1229}, year = {2021},
+  xdoi    = {10.1109/TNSE.2019.2959230}
+}

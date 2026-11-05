@@ -1,0 +1,133 @@
+{
+  "jena_version": "4.10.0",
+  "java_version": "11.0.30",
+  "rules_loaded": 8,
+  "A_rules": {
+    "listings": 5000,
+    "rules_engine_reference": "SPARQL 1.1 Update (ontology/rules.ru)",
+    "inferred_triples_sparql_update": 97500,
+    "inferred_triples_jena_rules": 97500,
+    "facts_differing_sparql_vs_jena_rules": 0,
+    "cost_scores_differing_sparql_vs_sort": 0,
+    "all_5000_ms": 8539,
+    "comfort_mismatches": 0,
+    "tradeoff_mismatches": 0,
+    "comfort_rule_mismatches": 0,
+    "listings_without_exactly_one_comfort_level": 0,
+    "facts_per_rule": {
+      "R1": 759,
+      "R2": 1744,
+      "R3": 1611,
+      "R4": 886,
+      "R5": 753,
+      "R6": 495,
+      "R7": 751,
+      "R8": 501
+    }
+  },
+  "B_sparql": {
+    "rows": 5000,
+    "max_abs_diff_S_vs_pipeline": 1.7763568394002505E-15,
+    "order_violations": 0,
+    "france_top3": [
+      "FR-0271 S=9.97 :: rule R1 inferred very comfortable from the available seats, the price per km lies at percentile 1 of the search, and booking is automatic; among the cheapest quarter of the search and books instantly",
+      "FR-0071 S=9.93 :: rule R1 inferred very comfortable from the available seats, the price per km lies at percentile 2 of the search, and booking is automatic; among the cheapest quarter of the search and books instantly",
+      "FR-0616 S=9.81 :: rule R1 inferred very comfortable from the available seats, the price per km lies at percentile 5 of the search, and booking is automatic; among the cheapest quarter of the search and books instantly"
+    ],
+    "cq2_france_cheap_but_approval": 95,
+    "cq4_rule_coverage": {
+      "R1": 759,
+      "R2": 1744,
+      "R3": 1611,
+      "R4": 886,
+      "R5": 753,
+      "R6": 495,
+      "R7": 751,
+      "R8": 501
+    },
+    "cq5_FR0271_vs_FR0057": {
+      "booking": 1.5,
+      "comfort": 0.0,
+      "cost": 0.124,
+      "gap": 1.624
+    }
+  },
+  "C_owl_consistency": {
+    "consistent": true,
+    "owl_reasoner": "Jena OWL Mini",
+    "check_ms": 33826,
+    "control_two_comfort_levels_detected": true,
+    "control_offer_typed_as_car_detected": true
+  },
+  "D_shacl": {
+    "valid_abox_conforms": true,
+    "valid_abox_violations": 0,
+    "defective_records": 250,
+    "defective_records_rejected": 250,
+    "rejected_per_defect_type": {
+      "bad_booking_mode": "50/50",
+      "missing_market": "50/50",
+      "missing_seats": "50/50",
+      "negative_price": "50/50",
+      "seats_out_of_range": "50/50"
+    }
+  },
+  "E_latency": {
+    "20": {
+      "w3c_sparql": {
+        "median_ms": 5.5,
+        "p95_ms": 8.4
+      },
+      "jena_rules": {
+        "median_ms": 3.4,
+        "p95_ms": 4.8
+      },
+      "w3c_sort_percentile": {
+        "median_ms": 2.9,
+        "p95_ms": 3.6
+      },
+      "plain_java": {
+        "median_ms": 0.0,
+        "p95_ms": 0.0
+      }
+    },
+    "100": {
+      "w3c_sparql": {
+        "median_ms": 20.8,
+        "p95_ms": 25.0
+      },
+      "jena_rules": {
+        "median_ms": 20.5,
+        "p95_ms": 28.2
+      },
+      "w3c_sort_percentile": {
+        "median_ms": 5.7,
+        "p95_ms": 6.6
+      },
+      "plain_java": {
+        "median_ms": 0.0,
+        "p95_ms": 0.1
+      }
+    },
+    "1000": {
+      "w3c_sparql": {
+        "median_ms": 1502.6,
+        "p95_ms": 1712.7
+      },
+      "jena_rules": {
+        "median_ms": 1522.4,
+        "p95_ms": 1645.5
+      },
+      "w3c_sort_percentile": {
+        "median_ms": 47.4,
+        "p95_ms": 56.5
+      },
+      "plain_java": {
+        "median_ms": 0.4,
+        "p95_ms": 0.5
+      }
+    },
+    "owl_consistency_100_offers_median_ms": 65.8,
+    "pipeline_w3c_sparql": "SHACL + SPARQL Update percentiles + SPARQL Update rules + SPARQL ranking/rationales"
+  }
+}

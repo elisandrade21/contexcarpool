@@ -1,0 +1,455 @@
+{
+  "seed": 20260604,
+  "n_per_country": 1000,
+  "n_total": 5000,
+  "countries": [
+    "Brazil",
+    "France",
+    "Italy",
+    "Portugal",
+    "Ukraine"
+  ],
+  "table2": [
+    {
+      "country": "Brazil",
+      "trips": 1000,
+      "median_dist": 463.0,
+      "median_price": 161.6,
+      "currency": "BRL",
+      "auto_pct": 64.8
+    },
+    {
+      "country": "France",
+      "trips": 1000,
+      "median_dist": 299.0,
+      "median_price": 20.8,
+      "currency": "EUR",
+      "auto_pct": 59.3
+    },
+    {
+      "country": "Italy",
+      "trips": 1000,
+      "median_dist": 283.0,
+      "median_price": 22.9,
+      "currency": "EUR",
+      "auto_pct": 74.7
+    },
+    {
+      "country": "Portugal",
+      "trips": 1000,
+      "median_dist": 323.0,
+      "median_price": 22.3,
+      "currency": "EUR",
+      "auto_pct": 58.9
+    },
+    {
+      "country": "Ukraine",
+      "trips": 1000,
+      "median_dist": 413.0,
+      "median_price": 845.8,
+      "currency": "UAH",
+      "auto_pct": 46.8
+    }
+  ],
+  "per_market_means_not_compared": [
+    {
+      "country": "Ukraine",
+      "f_C": 7.15,
+      "f_K": 5.0,
+      "f_B": 6.01,
+      "S": 6.06,
+      "S_meanofcol": 6.06
+    },
+    {
+      "country": "Brazil",
+      "f_C": 6.26,
+      "f_K": 5.0,
+      "f_B": 7.36,
+      "S": 5.98,
+      "S_meanofcol": 5.97
+    },
+    {
+      "country": "Italy",
+      "f_C": 5.78,
+      "f_K": 5.0,
+      "f_B": 8.1,
+      "S": 5.93,
+      "S_meanofcol": 5.93
+    },
+    {
+      "country": "Portugal",
+      "f_C": 6.07,
+      "f_K": 5.0,
+      "f_B": 6.92,
+      "S": 5.81,
+      "S_meanofcol": 5.81
+    },
+    {
+      "country": "France",
+      "f_C": 5.68,
+      "f_K": 5.0,
+      "f_B": 6.95,
+      "S": 5.66,
+      "S_meanofcol": 5.66
+    }
+  ],
+  "sensitivity": {
+    "n_perturbations": 26,
+    "mean_kendall_tau": 0.879,
+    "min_kendall_tau": 0.787,
+    "mean_top10_overlap": 0.985,
+    "min_top10_overlap": 0.6
+  },
+  "baseline_spearman": {
+    "Brazil": {
+      "vs_cost_only": 0.678,
+      "vs_comfort_only": 0.5,
+      "vs_booking_only": 0.428
+    },
+    "France": {
+      "vs_cost_only": 0.711,
+      "vs_comfort_only": 0.55,
+      "vs_booking_only": 0.491
+    },
+    "Italy": {
+      "vs_cost_only": 0.717,
+      "vs_comfort_only": 0.549,
+      "vs_booking_only": 0.394
+    },
+    "Portugal": {
+      "vs_cost_only": 0.689,
+      "vs_comfort_only": 0.529,
+      "vs_booking_only": 0.422
+    },
+    "Ukraine": {
+      "vs_cost_only": 0.704,
+      "vs_comfort_only": 0.526,
+      "vs_booking_only": 0.427
+    }
+  },
+  "example_france_top3": [
+    {
+      "trip_id": "FR-0271",
+      "S": 9.97,
+      "comfort": "VeryComfortable",
+      "f_K": 9.9,
+      "f_B": 10.0,
+      "seats": 4,
+      "auto": 1,
+      "price_per_km": 0.0361
+    },
+    {
+      "trip_id": "FR-0071",
+      "S": 9.93,
+      "comfort": "VeryComfortable",
+      "f_K": 9.8,
+      "f_B": 10.0,
+      "seats": 4,
+      "auto": 1,
+      "price_per_km": 0.0387
+    },
+    {
+      "trip_id": "FR-0616",
+      "S": 9.81,
+      "comfort": "VeryComfortable",
+      "f_K": 9.5,
+      "f_B": 10.0,
+      "seats": 4,
+      "auto": 1,
+      "price_per_km": 0.0443
+    }
+  ],
+  "aina2027_extensions": {
+    "trace_check": {
+      "listings_checked": 5000,
+      "all_clauses_backed_by_triples": true,
+      "scores_match_batch_pipeline": true
+    },
+    "tradeoff_coverage_pct": {
+      "ApprovalBargain": 9.9,
+      "ApprovalPremium": 10.0,
+      "ConveniencePremium": 15.0,
+      "InstantBargain": 15.1,
+      "none": 50.0
+    },
+    "example_france_rationales": [
+      "ranked 1 because rule R1 inferred VeryComfortable from the available seats, the price per km lies at percentile 1 of the search, and booking is automatic; it is among the cheapest quarter of the search and books instantly",
+      "ranked 2 because rule R1 inferred VeryComfortable from the available seats, the price per km lies at percentile 2 of the search, and booking is automatic; it is among the cheapest quarter of the search and books instantly",
+      "ranked 3 because rule R1 inferred VeryComfortable from the available seats, the price per km lies at percentile 5 of the search, and booking is automatic; it is among the cheapest quarter of the search and books instantly"
+    ],
+    "example_approval_bargain": [
+      {
+        "trip_id": "FR-0057",
+        "S": 8.347999999999999,
+        "rationale": "ranked 62 because rule R1 inferred VeryComfortable from the available seats, the price per km lies at percentile 4 of the search, and booking is manual; it is among the cheapest quarter of the search but requires driver approval"
+      }
+    ],
+    "latency_python_reference_not_reported": {
+      "20": {
+        "reps": 200,
+        "median_ms": 3.5,
+        "p95_ms": 6.5,
+        "listings_per_s": 5650
+      },
+      "100": {
+        "reps": 100,
+        "median_ms": 12.8,
+        "p95_ms": 16.4,
+        "listings_per_s": 7838
+      },
+      "1000": {
+        "reps": 20,
+        "median_ms": 116.9,
+        "p95_ms": 194.4,
+        "listings_per_s": 8553
+      }
+    },
+    "platform": {
+      "python": "3.14.6",
+      "machine": "arm64",
+      "processor": "arm"
+    },
+    "calibration_drift": {
+      "n_generators": 20,
+      "spearman_vs_cost": [
+        0.61,
+        0.78
+      ],
+      "spearman_vs_comfort": [
+        0.4,
+        0.66
+      ],
+      "spearman_vs_booking": [
+        0.24,
+        0.53
+      ],
+      "mean_tau_range": [
+        0.878,
+        0.886
+      ],
+      "worst_tau": 0.782,
+      "top10_mean_range": [
+        0.884,
+        1.0
+      ]
+    }
+  },
+  "aina2027_extensions_2": {
+    "search_20": {
+      "searches": 1000,
+      "top_k": 3,
+      "spearman_mean": {
+        "cost": 0.7,
+        "comfort": 0.5,
+        "booking": 0.4
+      },
+      "spearman_p95": {
+        "cost": 0.85,
+        "comfort": 0.75,
+        "booking": 0.69
+      },
+      "share_searches_rho_ge_0_9": {
+        "cost": 0.006,
+        "comfort": 0.0,
+        "booking": 0.0
+      },
+      "tau_mean": 0.88,
+      "tau_p5": 0.759,
+      "topk_overlap_mean": 0.866,
+      "topk_overlap_worst": 0.0
+    },
+    "search_100": {
+      "searches": 1000,
+      "top_k": 10,
+      "spearman_mean": {
+        "cost": 0.7,
+        "comfort": 0.53,
+        "booking": 0.42
+      },
+      "spearman_p95": {
+        "cost": 0.77,
+        "comfort": 0.64,
+        "booking": 0.56
+      },
+      "share_searches_rho_ge_0_9": {
+        "cost": 0.0,
+        "comfort": 0.0,
+        "booking": 0.0
+      },
+      "tau_mean": 0.879,
+      "tau_p5": 0.799,
+      "topk_overlap_mean": 0.879,
+      "topk_overlap_worst": 0.3
+    },
+    "correlation_sweep_france": [
+      {
+        "corr_seats_price": -0.9,
+        "rho_cost": 0.92,
+        "rho_comfort": 0.89,
+        "rho_booking": 0.33
+      },
+      {
+        "corr_seats_price": -0.6,
+        "rho_cost": 0.85,
+        "rho_comfort": 0.79,
+        "rho_booking": 0.35
+      },
+      {
+        "corr_seats_price": -0.3,
+        "rho_cost": 0.77,
+        "rho_comfort": 0.66,
+        "rho_booking": 0.39
+      },
+      {
+        "corr_seats_price": 0.0,
+        "rho_cost": 0.7,
+        "rho_comfort": 0.54,
+        "rho_booking": 0.44
+      },
+      {
+        "corr_seats_price": 0.3,
+        "rho_cost": 0.61,
+        "rho_comfort": 0.39,
+        "rho_booking": 0.51
+      },
+      {
+        "corr_seats_price": 0.6,
+        "rho_cost": 0.51,
+        "rho_comfort": 0.19,
+        "rho_booking": 0.6
+      },
+      {
+        "corr_seats_price": 0.9,
+        "rho_cost": 0.37,
+        "rho_comfort": -0.08,
+        "rho_booking": 0.79
+      }
+    ]
+  },
+  "aina2027_extensions_3": {
+    "weights_global": {
+      "n_triples": 1000,
+      "n_markets": 5,
+      "tau_mean": 0.692,
+      "share_tau_ge_0_7": 0.403,
+      "share_tau_ge_0_7_within_tv_0_2": 0.993,
+      "share_tau_ge_0_7_beyond_tv_0_4": 0.16,
+      "top10_mean": 0.831,
+      "tau_when_any_weight_gt_0_6": 0.644
+    },
+    "learned_ranker": {
+      "model": "GradientBoostingRegressor (300 trees, depth 3) on raw fields (seats, price/km, booking)",
+      "test_offers": 300,
+      "kendall_tau_vs_S": 0.987,
+      "top10_overlap_vs_S": 1.0,
+      "shap_top_criterion_differs_pct": 1.0,
+      "shap_full_order_differs_pct": 3.0,
+      "shap_sign_contradicts_exact_pct": 0.0
+    },
+    "ontology_metrics": {
+      "triples": 180,
+      "classes": 11,
+      "object_properties": 6,
+      "datatype_properties": 7,
+      "named_individuals": 17,
+      "subclass_axioms": 9,
+      "disjointness_axioms": 8,
+      "functional_properties": 9,
+      "schema_org_alignments": 4,
+      "prov_alignments": 3
+    }
+  },
+  "aina2027_weight_methods": {
+    "rank_sum": {
+      "weights": [
+        0.417,
+        0.417,
+        0.167
+      ],
+      "tau_mean": 0.958,
+      "top10_mean": 1.0
+    },
+    "rank_order_centroid": {
+      "weights": [
+        0.444,
+        0.444,
+        0.111
+      ],
+      "tau_mean": 0.888,
+      "top10_mean": 1.0
+    },
+    "entropy": {
+      "weights": [
+        [
+          0.177,
+          0.477,
+          0.346
+        ],
+        [
+          0.187,
+          0.444,
+          0.369
+        ],
+        [
+          0.222,
+          0.509,
+          0.269
+        ],
+        [
+          0.192,
+          0.439,
+          0.369
+        ],
+        [
+          0.127,
+          0.427,
+          0.446
+        ]
+      ],
+      "tau_mean": 0.735,
+      "top10_mean": 0.8
+    },
+    "critic": {
+      "weights": [
+        [
+          0.29,
+          0.275,
+          0.436
+        ],
+        [
+          0.279,
+          0.27,
+          0.45
+        ],
+        [
+          0.301,
+          0.279,
+          0.42
+        ],
+        [
+          0.297,
+          0.26,
+          0.443
+        ],
+        [
+          0.281,
+          0.261,
+          0.458
+        ]
+      ],
+      "tau_mean": 0.775,
+      "top10_mean": 1.0
+    }
+  },
+  "ontology_metrics": {
+    "classes": 14,
+    "object_properties": 9,
+    "datatype_properties": 13,
+    "named_individuals": 30,
+    "functional_properties": 17,
+    "disjointness_axioms": 15,
+    "alignments_schema_org": 4,
+    "alignments_prov_o": 5,
+    "note": "counted from code/ontology/ridesharing.ttl on 2026-11-05"
+  }
+}

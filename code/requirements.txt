@@ -1,0 +1,6 @@
+numpy
+pandas
+scipy
+rdflib>=7
+scikit-learn
+shap

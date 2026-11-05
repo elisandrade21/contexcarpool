@@ -1,0 +1,9 @@
+# CQ3  Which rule produced each inferred fact about an offer, by which agent, and from which input?
+PREFIX wm:   <http://example.org/ridesharing#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?offer ?fact ?rule ?agent ?seats ?mode ?fK WHERE {
+  ?e prov:wasDerivedFrom ?offer ; rdf:value ?fact ; prov:wasGeneratedBy ?f .
+  ?f prov:qualifiedAssociation ?q . ?q prov:hadPlan ?rule ; prov:agent ?agent .
+  ?offer wm:hasSeatsAvailable ?seats ; wm:hasBookingMode ?mode ; wm:hasCostScore ?fK .
+}

@@ -1,0 +1,12 @@
+{ 
+  "engine" : "Apache Jena 4.10" ,
+  "searches" : 90 ,
+  "score_mismatches" : 0 ,
+  "context_note_mismatches" : 0 ,
+  "order_changed_by_context" : 0 ,
+  "shacl_failures" : 0 ,
+  "personal_view_mismatches" : 0 ,
+  "settlement_trips" : 1977 ,
+  "settlement_mismatches" : 0 ,
+  "owl_inconsistent_of_3" : 0
+}

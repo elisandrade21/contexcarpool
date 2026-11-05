@@ -1,0 +1,210 @@
+{
+  "markets": {
+    "Brazil": {
+      "f_C": {
+        "rho_single": 0.5,
+        "r2_from_others": 0.0,
+        "tau_without": 0.627
+      },
+      "f_K": {
+        "rho_single": 0.678,
+        "r2_from_others": 0.002,
+        "tau_without": 0.499
+      },
+      "f_B": {
+        "rho_single": 0.428,
+        "r2_from_others": 0.0,
+        "tau_without": 0.753
+      },
+      "refuted": false,
+      "old_test_refuted": false
+    },
+    "France": {
+      "f_C": {
+        "rho_single": 0.55,
+        "r2_from_others": 0.0,
+        "tau_without": 0.668
+      },
+      "f_K": {
+        "rho_single": 0.711,
+        "r2_from_others": 0.0,
+        "tau_without": 0.556
+      },
+      "f_B": {
+        "rho_single": 0.491,
+        "r2_from_others": 0.0,
+        "tau_without": 0.763
+      },
+      "refuted": false,
+      "old_test_refuted": false
+    },
+    "Italy": {
+      "f_C": {
+        "rho_single": 0.549,
+        "r2_from_others": 0.0,
+        "tau_without": 0.633
+      },
+      "f_K": {
+        "rho_single": 0.717,
+        "r2_from_others": 0.0,
+        "tau_without": 0.523
+      },
+      "f_B": {
+        "rho_single": 0.394,
+        "r2_from_others": 0.0,
+        "tau_without": 0.807
+      },
+      "refuted": false,
+      "old_test_refuted": false
+    },
+    "Portugal": {
+      "f_C": {
+        "rho_single": 0.529,
+        "r2_from_others": 0.0,
+        "tau_without": 0.62
+      },
+      "f_K": {
+        "rho_single": 0.689,
+        "r2_from_others": 0.0,
+        "tau_without": 0.524
+      },
+      "f_B": {
+        "rho_single": 0.422,
+        "r2_from_others": 0.0,
+        "tau_without": 0.75
+      },
+      "refuted": false,
+      "old_test_refuted": false
+    },
+    "Ukraine": {
+      "f_C": {
+        "rho_single": 0.526,
+        "r2_from_others": 0.0,
+        "tau_without": 0.652
+      },
+      "f_K": {
+        "rho_single": 0.704,
+        "r2_from_others": 0.0,
+        "tau_without": 0.524
+      },
+      "f_B": {
+        "rho_single": 0.427,
+        "r2_from_others": 0.0,
+        "tau_without": 0.741
+      },
+      "refuted": false,
+      "old_test_refuted": false
+    }
+  },
+  "counterexample_booking_redundant": {
+    "f_C": {
+      "rho_single": 0.813,
+      "r2_from_others": 0.721,
+      "tau_without": 0.752
+    },
+    "f_K": {
+      "rho_single": 0.574,
+      "r2_from_others": 0.0,
+      "tau_without": 0.659
+    },
+    "f_B": {
+      "rho_single": 0.794,
+      "r2_from_others": 1.0,
+      "tau_without": 0.858
+    },
+    "refuted": true,
+    "old_test_refuted": false
+  },
+  "pages": {
+    "20": {
+      "f_C": {
+        "tau_without_mean": 0.653,
+        "share_tau_without_ge_0_9": 0.001
+      },
+      "f_K": {
+        "tau_without_mean": 0.501,
+        "share_tau_without_ge_0_9": 0.0
+      },
+      "f_B": {
+        "tau_without_mean": 0.768,
+        "share_tau_without_ge_0_9": 0.039
+      }
+    },
+    "100": {
+      "f_C": {
+        "tau_without_mean": 0.641,
+        "share_tau_without_ge_0_9": 0.0
+      },
+      "f_K": {
+        "tau_without_mean": 0.522,
+        "share_tau_without_ge_0_9": 0.0
+      },
+      "f_B": {
+        "tau_without_mean": 0.762,
+        "share_tau_without_ge_0_9": 0.0
+      }
+    }
+  },
+  "copula_r2_tau_without": {
+    "-0.9": {
+      "f_C": [
+        0.675,
+        0.833
+      ],
+      "f_K": [
+        0.697,
+        0.721
+      ],
+      "f_B": [
+        0.0,
+        0.815
+      ],
+      "refuted": false
+    },
+    "-0.6": {
+      "f_C": [
+        0.244,
+        0.761
+      ],
+      "f_K": [
+        0.288,
+        0.685
+      ],
+      "f_B": [
+        0.0,
+        0.802
+      ],
+      "refuted": false
+    },
+    "0.6": {
+      "f_C": [
+        0.229,
+        0.562
+      ],
+      "f_K": [
+        0.306,
+        0.398
+      ],
+      "f_B": [
+        0.0,
+        0.659
+      ],
+      "refuted": false
+    },
+    "0.9": {
+      "f_C": [
+        0.695,
+        0.534
+      ],
+      "f_K": [
+        0.722,
+        0.325
+      ],
+      "f_B": [
+        0.0,
+        0.531
+      ],
+      "refuted": false
+    }
+  }
+}

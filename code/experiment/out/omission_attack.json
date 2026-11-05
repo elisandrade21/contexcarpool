@@ -1,0 +1,75 @@
+{
+  "hide_cheapest_k1": {
+    "median_positions_gained": 0.0,
+    "p90": 1.0,
+    "max": 2,
+    "share_reaching_top10": 0.0
+  },
+  "hide_cheapest_k5": {
+    "median_positions_gained": 0.0,
+    "p90": 2.0,
+    "max": 6,
+    "share_reaching_top10": 0.0
+  },
+  "hide_cheapest_k10": {
+    "median_positions_gained": 0.0,
+    "p90": 3.0,
+    "max": 8,
+    "share_reaching_top10": 0.0
+  },
+  "add_expensive_fakes_k1": {
+    "median_positions_gained": 0.0,
+    "p90": 1.0,
+    "max": 3,
+    "share_reaching_top10": 0.0
+  },
+  "add_expensive_fakes_k5": {
+    "median_positions_gained": 0.0,
+    "p90": 2.0,
+    "max": 7,
+    "share_reaching_top10": 0.0
+  },
+  "add_expensive_fakes_k10": {
+    "median_positions_gained": 0.0,
+    "p90": 4.0,
+    "max": 9,
+    "share_reaching_top10": 0.0
+  },
+  "hide_just_cheaper_k1": {
+    "median_positions_gained": 0.0,
+    "p90": 1.0,
+    "max": 3,
+    "share_reaching_top10": 0.0
+  },
+  "hide_just_cheaper_k5": {
+    "median_positions_gained": 2.0,
+    "p90": 4.0,
+    "max": 7,
+    "share_reaching_top10": 0.0
+  },
+  "hide_just_cheaper_k10": {
+    "median_positions_gained": 4.0,
+    "p90": 6.0,
+    "max": 13,
+    "share_reaching_top10": 0.0
+  },
+  "add_fakes_just_above_k1": {
+    "median_positions_gained": 0.0,
+    "p90": 1.0,
+    "max": 3,
+    "share_reaching_top10": 0.0
+  },
+  "add_fakes_just_above_k5": {
+    "median_positions_gained": 2.0,
+    "p90": 4.0,
+    "max": 7,
+    "share_reaching_top10": 0.0
+  },
+  "add_fakes_just_above_k10": {
+    "median_positions_gained": 4.0,
+    "p90": 6.0,
+    "max": 10,
+    "share_reaching_top10": 0.0
+  },
+  "note": "Target at position 50 of 100; the recomputation on the manipulated set reproduces every published score, so none of these is flagged."
+}

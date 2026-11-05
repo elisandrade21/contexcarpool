@@ -105,7 +105,7 @@ for (const [n, list] of Object.entries(data.latency)) {
   for (let i = 0; i < reps; i++) rs.push(run(list[i % list.length]));
   lat[n] = Object.fromEntries(["cost", "rules", "rank", "context", "total"].map(k => [k + "_ms", +med(rs.map(r => r[k])).toFixed(1)]));
 }
-const res = { engine: "Oxigraph 0.5.13 (WebAssembly, Node " + process.version + ")", searches: data.check.length, offers_per_search: 100,
+const res = { engine: "Oxigraph 0.5.13 (WebAssembly, Node " + process.version + ")", searches: data.check.length, offers: data.check.reduce((a, s) => a + s.offers.length, 0),
   row_count_mismatches: count, score_mismatches: score, rule_mismatches: rule, tradeoff_mismatches: trade, order_violations: order, context_note_mismatches: note, order_changed_by_context: moved, settlement_trips: trips, settlement_mismatches: fare, latency: lat };
 writeFileSync(join(here, "../out/crosscheck_oxigraph.json"), JSON.stringify(res, null, 2));
 console.log(JSON.stringify(res, null, 2));

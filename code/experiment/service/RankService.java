@@ -171,7 +171,7 @@ public class RankService {
             try (OutputStream os = ex.getResponseBody()) { os.write(body); }
         });
         srv.createContext("/result", ex -> {
-            byte[] in = ex.getRequestBody().readNBytes(65536);
+            byte[] in = ex.getRequestBody().readNBytes(262144);
             int code = "POST".equals(ex.getRequestMethod()) && in.length > 0 ? 204 : 400;
             if (code == 204) { JSON.parseAny(new String(in, StandardCharsets.UTF_8)); Files.write(runs.resolve(System.currentTimeMillis() + ".json"), in); }
             ex.sendResponseHeaders(code, -1); ex.close();

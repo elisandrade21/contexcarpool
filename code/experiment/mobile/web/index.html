@@ -129,6 +129,12 @@ nav button[aria-current=page]{color:var(--brand);font-weight:600}
       <div class="row" style="margin:6px 0">Passenger phone: <input id="kP" inputmode="decimal" size="5"> km &nbsp; Driver phone: <input id="kD" inputmode="decimal" size="5"> km</div>
       <button class="action" id="fGo">Compute fare on this phone</button>
       <div class="result" id="fRes" role="status"></div></div>
+    <div class="panel"><h2>Record a real trip (GPS)</h2>
+      <p>For a real ride with two phones. Both open this tab, type the same trip code, pick their role and press Start at pickup and Stop at drop-off. Keep the screen on. The distance is measured on each phone; the track is sent to the test server only to compare the two phones.</p>
+      <div class="row" style="margin:6px 0">Trip code: <input id="gCode" size="8" autocomplete="off"> &nbsp; Odometer km (optional): <input id="gOdo" inputmode="decimal" size="5"></div>
+      <div class="chips" id="gRole"></div>
+      <div class="row"><button class="action" id="gStart">Start</button><button class="action ghost" id="gStop" disabled>Stop</button></div>
+      <div class="result" id="gRes" role="status"></div></div>
   </section>
   <section class="tab" id="t-test" hidden>
     <div class="panel"><h2>Speed test</h2>
@@ -314,6 +320,36 @@ $("fGo").onclick=()=>{const o=fareTrip(),D=+o.distance,t0=performance.now();
   if(!r){out.className="result wrong";out.textContent="No rule fired.";return;}
   if(r.get("disputed").value==="true"){out.className="result wrong";out.textContent=`Disputed (rule ${r.get("rule").value}): the two records differ by more than 5% of the trip. Computed in ${ms.toFixed(0)} ms.`;}
   else{out.className="result good";out.textContent=`Fare due: ${CUR[S.currency]}${Number(r.get("fare").value).toFixed(2)} (rule ${r.get("rule").value}), instead of ${CUR[S.currency]}${(o.price_per_km*D).toFixed(2)}. The driver's phone computes the same value from the same two records. ${ms.toFixed(0)} ms.`;}};
+// Real trip recording: distance from the GPS of this phone (Geolocation API, high accuracy).
+const ROLES=["passenger","driver"];let gRole=0,gWatch=null,gLock=null,gPts=[],gKm=0,gLast=null,gBad=0,gT0=0;
+function roles(){$("gRole").replaceChildren(...ROLES.map((n,i)=>{const b=el("button",null,n==="passenger"?"I am the passenger":"I am the driver");b.setAttribute("aria-pressed",String(i===gRole));b.onclick=()=>{if(!gWatch){gRole=i;roles();}};return b;}));}
+roles();
+const hav=(a,b)=>{const R=6371.0088,r=Math.PI/180,dl=(b.lat-a.lat)*r,dn=(b.lon-a.lon)*r,x=Math.sin(dl/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(x));};
+function gShow(){const min=((Date.now()-gT0)/60000).toFixed(0);$("gRes").className="result";$("gRes").textContent=`Recording: ${gKm.toFixed(2)} km, ${gPts.length} fixes, ${gBad} discarded, ${min} min.`;}
+$("gStart").onclick=async()=>{
+  if(!navigator.geolocation){$("gRes").textContent="This browser has no GPS access.";return;}
+  if(!$("gCode").value.trim()){$("gRes").className="result wrong";$("gRes").textContent="Type a trip code first (the same on both phones).";return;}
+  gPts=[];gKm=0;gLast=null;gBad=0;gT0=Date.now();
+  try{gLock=await navigator.wakeLock?.request("screen");}catch(e){gLock=null;}
+  gWatch=navigator.geolocation.watchPosition(p=>{const c=p.coords,q={lat:c.latitude,lon:c.longitude,acc:c.accuracy,t:p.timestamp,spd:c.speed};
+      if(c.accuracy>30){gBad++;gShow();return;}                       // too imprecise
+      if(gLast){const d=hav(gLast,q),dt=(q.t-gLast.t)/1000;
+        if(dt<=0||d*1000/dt>55){gBad++;gShow();return;}               // jump faster than 200 km/h
+        if(d*1000<Math.max(5,(q.acc+gLast.acc)/4)){gShow();return;}   // jitter while stopped
+        gKm+=d;}
+      gLast=q;gPts.push([+q.lat.toFixed(6),+q.lon.toFixed(6),Math.round(q.acc),q.t]);gShow();},
+    e=>{$("gRes").className="result wrong";$("gRes").textContent="GPS error: "+e.message;},{enableHighAccuracy:true,maximumAge:0,timeout:20000});
+  $("gStart").disabled=true;$("gStop").disabled=false;gShow();};
+$("gStop").onclick=async()=>{
+  navigator.geolocation.clearWatch(gWatch);gWatch=null;try{await gLock?.release();}catch(e){}
+  $("gStart").disabled=false;$("gStop").disabled=true;
+  const role=ROLES[gRole],odo=parseFloat(($("gOdo").value||"").replace(",","."));
+  $(role==="passenger"?"kP":"kD").value=gKm.toFixed(2);
+  const step=Math.max(1,Math.ceil(gPts.length/1500));
+  const res={kind:"gps_trip",trip_code:$("gCode").value.trim(),role,km:+gKm.toFixed(3),odometer_km:isFinite(odo)?odo:null,fixes:gPts.length,discarded:gBad,
+    minutes:+((Date.now()-gT0)/60000).toFixed(1),user_agent:navigator.userAgent,filter:"acc<=30m, speed<=55m/s, step>=max(5m,mean acc/2)",track:gPts.filter((_,i)=>i%step===0||i===gPts.length-1)};
+  let saved="";try{const r=await fetch("result",{method:"POST",body:JSON.stringify(res)});saved=r.ok?" Saved on the test server.":" Not saved.";}catch(e){saved=" Not saved.";}
+  $("gRes").className="result good";$("gRes").textContent=`This phone measured ${gKm.toFixed(2)} km (${gPts.length} fixes, ${gBad} discarded). It was copied to the fare box above; enter the other phone's value there.`+saved;};
 const NETS=["Wi-Fi","Phone hotspot","4G","5G"]; let net=0;
 function nets(){$("net").replaceChildren(...NETS.map((n,i)=>{const b=el("button",null,n);b.setAttribute("aria-pressed",String(i===net));b.onclick=()=>{net=i;nets();};return b;}));}
 nets();

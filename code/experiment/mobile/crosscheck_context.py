@@ -56,7 +56,7 @@ for s in data["check"]:
         if r is None: bad["fare"] += 1
         elif o["trip"].get("disputed"): bad["fare"] += not r.disputed.toPython()
         else: bad["fare"] += abs(float(r.fare) - o["trip"]["fare"]) > 1e-9
-res = dict(engine="rdflib", searches=len(data["check"]), offers_per_search=100, score_mismatches=bad["score"],
+res = dict(engine="rdflib", searches=len(data["check"]), offers=sum(len(s["offers"]) for s in data["check"]), score_mismatches=bad["score"],
            context_note_mismatches=bad["notes"], order_changed_by_context=bad["moved"], personal_view_mismatches=bad["cq7"], settlement_trips=bad["trips"], settlement_mismatches=bad["fare"])
 json.dump(res, open(os.path.join(HERE, "..", "out", "crosscheck_context_rdflib.json"), "w"), indent=2)
 print(res)

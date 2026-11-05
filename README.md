@@ -43,13 +43,14 @@ python3 experiment/mobile/settlement_data.py
 python3 experiment/mobile/settlement_sensitivity.py
 node experiment/mobile/cq7check.mjs <node_modules>/oxigraph/node.js
 node experiment/mobile/crosscheck_oxigraph.mjs <node_modules>/oxigraph/node.js
+node experiment/mobile/rationale_check.mjs <node_modules>/oxigraph/node.js 8765   # needs the service running; same rationale text on server and phone engine
 python3 experiment/mobile/crosscheck_context.py
 java -cp ".tools/apache-jena-4.10.0/lib/*" experiment/mobile/ContextCheck.java
 python3 experiment/mobile/build_web.py <node_modules>
 java -cp ".tools/apache-jena-4.10.0/lib/*" experiment/service/RankService.java 8765 0.0.0.0
 ```
 
-Semi-real scenario: `python3 experiment/mobile/real_registry.py` adds 30 searches with real departure points, times and distances from the French carpool registry (Registre de preuve de covoiturage, data.gouv.fr, Licence Ouverte; sample of the first days of October 2026 in `code/experiment/out/registry_sample.csv.gz`). Price, seats and booking stay modelled.
+Semi-real scenario: `python3 experiment/mobile/real_registry.py` adds 30 searches with real departure points, times and distances from the French carpool registry (Registre de preuve de covoiturage, data.gouv.fr, Licence Ouverte; sample of 1–6 October 2026 in `code/experiment/out/registry_sample.csv.gz`). Price, seats and booking stay modelled.
 
 ## Reproduce
 
@@ -63,6 +64,8 @@ python3 experiment/crosscheck_rdflib.py
 python3 experiment/rq1_redundancy.py
 python3 experiment/data_stability.py
 python3 experiment/tamper_audit.py
+python3 experiment/omission_attack.py       # what recomputation cannot see: hidden or fake offers
+python3 experiment/baselines.py             # price and price-per-km orderings vs S
 python3 experiment/calibrated_france.py
 # HTTP service and load test
 java -cp ".tools/apache-jena-4.10.0/lib/*" experiment/service/RankService.java 8080 &

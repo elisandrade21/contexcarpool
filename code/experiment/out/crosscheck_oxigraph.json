@@ -1,7 +1,7 @@
 {
   "engine": "Oxigraph 0.5.13 (WebAssembly, Node v20.18.3)",
   "searches": 90,
-  "offers_per_search": 100,
+  "offers": 6600,
   "row_count_mismatches": 0,
   "score_mismatches": 0,
   "rule_mismatches": 0,
@@ -14,24 +14,24 @@
   "latency": {
     "20": {
       "cost_ms": 0.4,
-      "rules_ms": 5.7,
-      "rank_ms": 1.1,
-      "context_ms": 5.8,
-      "total_ms": 15
+      "rules_ms": 5.5,
+      "rank_ms": 1,
+      "context_ms": 5.1,
+      "total_ms": 15.6
     },
     "100": {
-      "cost_ms": 3.4,
-      "rules_ms": 14.2,
-      "rank_ms": 11,
-      "context_ms": 18.9,
-      "total_ms": 46.3
+      "cost_ms": 3.5,
+      "rules_ms": 14.5,
+      "rank_ms": 10.1,
+      "context_ms": 17.8,
+      "total_ms": 44.8
     },
     "1000": {
-      "cost_ms": 271.5,
-      "rules_ms": 96.6,
-      "rank_ms": 50.4,
-      "context_ms": 98.6,
-      "total_ms": 499.2
+      "cost_ms": 266,
+      "rules_ms": 69.7,
+      "rank_ms": 62.7,
+      "context_ms": 95.4,
+      "total_ms": 488.3
     }
   }
 }

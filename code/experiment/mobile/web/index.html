@@ -139,6 +139,7 @@ nav button[aria-current=page]{color:var(--brand);font-weight:600}
   <section class="tab" id="t-test" hidden>
     <div class="panel"><h2>Speed test</h2>
       <p>Compares ranking on this phone with asking the server. It takes about a minute. Pick the network you are on.</p>
+      <div class="row" style="margin:6px 0">Phone model (optional): <input id="pModel" size="16" autocomplete="off" placeholder="e.g. iPhone 15"></div>
       <div class="chips" id="net"></div>
       <button class="action" id="bench">Run test</button>
       <div class="result" id="bRes" role="status"></div></div>
@@ -346,10 +347,17 @@ $("gStop").onclick=async()=>{
   const role=ROLES[gRole],odo=parseFloat(($("gOdo").value||"").replace(",","."));
   $(role==="passenger"?"kP":"kD").value=gKm.toFixed(2);
   const step=Math.max(1,Math.ceil(gPts.length/1500));
-  const res={kind:"gps_trip",trip_code:$("gCode").value.trim(),role,km:+gKm.toFixed(3),odometer_km:isFinite(odo)?odo:null,fixes:gPts.length,discarded:gBad,
+  const res={kind:"gps_trip",device:await devInfo(),trip_code:$("gCode").value.trim(),role,km:+gKm.toFixed(3),odometer_km:isFinite(odo)?odo:null,fixes:gPts.length,discarded:gBad,
     minutes:+((Date.now()-gT0)/60000).toFixed(1),user_agent:navigator.userAgent,filter:"acc<=30m, speed<=55m/s, step>=max(5m,mean acc/2)",track:gPts.filter((_,i)=>i%step===0||i===gPts.length-1)};
   let saved="";try{const r=await fetch("result",{method:"POST",body:JSON.stringify(res)});saved=r.ok?" Saved on the test server.":" Not saved.";}catch(e){saved=" Not saved.";}
   $("gRes").className="result good";$("gRes").textContent=`This phone measured ${gKm.toFixed(2)} km (${gPts.length} fixes, ${gBad} discarded). It was copied to the fare box above; enter the other phone's value there.`+saved;};
+// Device description for the result files: Chrome gives model and OS version on request;
+// Safari hides the model, so we keep screen size, pixel ratio and the Safari version.
+async function devInfo(){const o={model_typed:($("pModel")?.value||"").trim()||null,screen:[screen.width,screen.height],pixel_ratio:devicePixelRatio,
+  safari_version:(navigator.userAgent.match(/Version\/([\d.]+)/)||[])[1]||null,chrome_version:(navigator.userAgent.match(/Chrome\/([\d.]+)/)||[])[1]||null};
+  try{if(navigator.userAgentData?.getHighEntropyValues){const h=await navigator.userAgentData.getHighEntropyValues(["model","platform","platformVersion"]);o.model=h.model||null;o.platform=h.platform||null;o.platform_version=h.platformVersion||null;}}catch(e){}
+  try{const c=navigator.connection;if(c)o.connection={effective_type:c.effectiveType,downlink_mbps:c.downlink,rtt_ms:c.rtt};}catch(e){}
+  return o;}
 const NETS=["Wi-Fi","Phone hotspot","4G","5G"]; let net=0;
 function nets(){$("net").replaceChildren(...NETS.map((n,i)=>{const b=el("button",null,n);b.setAttribute("aria-pressed",String(i===net));b.onclick=()=>{net=i;nets();};return b;}));}
 nets();
@@ -360,7 +368,7 @@ $("bench").onclick=async()=>{
   if(benchRunning)return; benchRunning=true; $("bench").disabled=true;
   const out=$("bRes"); out.className="result"; out.textContent="Running...";await pause();
   const nav_=performance.getEntriesByType("navigation")[0], wasm=performance.getEntriesByName(new URL("web_bg.wasm",location.href).href)[0];
-  const res={network:NETS[net],user_agent:navigator.userAgent,cores:navigator.hardwareConcurrency,engine_start_ms:+wasmMs.toFixed(1),page_load_ms:nav_?+nav_.duration.toFixed(1):null,wasm_fetch_ms:wasm?+wasm.duration.toFixed(1):null,wasm_transfer_bytes:wasm?wasm.transferSize:null};
+  const res={device:await devInfo(),network:NETS[net],user_agent:navigator.userAgent,cores:navigator.hardwareConcurrency,engine_start_ms:+wasmMs.toFixed(1),page_load_ms:nav_?+nav_.duration.toFixed(1):null,wasm_fetch_ms:wasm?+wasm.duration.toFixed(1):null,wasm_transfer_bytes:wasm?wasm.transferSize:null};
   const rtt=[];for(let i=0;i<30;i++){const t=performance.now();await fetch("echo",{method:"POST",body:"x"});rtt.push(performance.now()-t);}
   res.rtt_median_ms=quant(rtt,.5);
   if(!DATA.bench)DATA.bench=await (await fetch("bench.json",{cache:"no-cache"})).json();

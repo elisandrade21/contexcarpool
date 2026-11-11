@@ -7,7 +7,9 @@ This script pairs the two roles by trip code and reports, per trip:
   - the relative difference of each phone to the car's odometer, when it was typed;
   - the fare rule outcome: R14 (settled) if the records agree within 5% of the trip, else R15 (disputed),
     with the trip taken as the odometer distance if typed, otherwise the mean of the two records.
-Trips with only one role are listed apart and not used. Writes out/gps_trips.json and prints the
+Trips recorded on one phone only (one role) are reported apart, against the odometer: the relative
+difference |km - odometer| / odometer, and the R14/R15 outcome that the same error on both phones would
+give in the worst case (errors in opposite directions double the gap between the records). Writes out/gps_trips.json and prints the
 sentence for Sect. 5.1 of the paper.
   python3 gps_trips.py [folder with the result files]   (default: ../out/mobile_runs)"""
 import glob, json, os, sys
@@ -51,7 +53,16 @@ for code, t in sorted(trips.items()):
                      minutes=max(t["passenger"]["minutes"], t["driver"]["minutes"]),
                      files=[t["passenger"]["file"], t["driver"]["file"]]))
 
-res = dict(tolerance=TOL, trips=rows, incomplete_trip_codes=incomplete)
+single = []
+for code in incomplete:
+    r = next(iter(trips[code].values()))
+    odo = r.get("odometer_km")
+    if odo:
+        e = abs(r["km"] - odo) / odo
+        single.append(dict(trip_code=code, role=r["role"], km=r["km"], odometer_km=odo, diff_vs_odometer_pct=round(100 * e, 2),
+                           worst_case_rule="R14" if 2 * e <= TOL else "R15", fixes=r["fixes"], discarded=r["discarded"],
+                           minutes=r["minutes"], file=r["file"]))
+res = dict(tolerance=TOL, trips=rows, incomplete_trip_codes=incomplete, single_phone_trips=single)
 json.dump(res, open(OUT, "w"), indent=2)
 for r in rows:
     print(r)
@@ -68,3 +79,11 @@ if rows:
     s += f" and from the car's odometer by {rng(odo)}\\%" if odo else ""
     s += f"; R14 settled {k} of them and R15 flagged {len(rows) - k}."
     print("\nSentence for Sect. 5.1:\n" + s)
+if single:
+    errs = [t["diff_vs_odometer_pct"] for t in single]
+    lens = [t["odometer_km"] for t in single]
+    k = sum(t["worst_case_rule"] == "R14" for t in single)
+    rng1 = lambda xs: f"{min(xs):.1f}" if min(xs) == max(xs) else f"{min(xs):.1f}--{max(xs):.1f}"
+    print(f"\nSentence for Sect. 5.1 (one phone):\nIn {len(single)} real trips of {rng1(lens)}\\,km recorded by GPS on one phone, "
+          f"the distance differed from the car's odometer by {rng1(errs)}\\%; even if two phones erred in opposite directions, "
+          f"R14 would settle {k} of them and R15 would flag {len(single) - k}.")

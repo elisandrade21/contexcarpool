@@ -1,0 +1,89 @@
+{
+  "drives": 58,
+  "pairs": 177,
+  "segments": {},
+  "by_length": {
+    "2": {
+      "n": 2674,
+      "drives": 58,
+      "reldiff_median": 0.0032,
+      "reldiff_p95": 0.0666,
+      "reldiff_max": 2.0,
+      "err_vs_ref_median": 0.0176,
+      "err_vs_ref_p95": 0.0691,
+      "false_dispute_3": 0.0785,
+      "detection_3": 0.9454,
+      "false_dispute_5": 0.0531,
+      "detection_5": 0.917,
+      "false_dispute_5_ci95": [
+        0.033,
+        0.0776
+      ],
+      "detection_5_ci95": [
+        0.8943,
+        0.9366
+      ],
+      "false_dispute_10": 0.0344,
+      "detection_10": 0.8119,
+      "false_dispute_5_different_model": 0.0633,
+      "false_dispute_5_same_model": 0.0235
+    },
+    "5": {
+      "n": 1009,
+      "drives": 58,
+      "reldiff_median": 0.0031,
+      "reldiff_p95": 0.0719,
+      "reldiff_max": 2.0,
+      "err_vs_ref_median": 0.0076,
+      "err_vs_ref_p95": 0.0662,
+      "false_dispute_3": 0.0763,
+      "detection_3": 0.9277,
+      "false_dispute_5": 0.0545,
+      "detection_5": 0.8989,
+      "false_dispute_5_ci95": [
+        0.0274,
+        0.0872
+      ],
+      "detection_5_ci95": [
+        0.8668,
+        0.93
+      ],
+      "false_dispute_10": 0.0258,
+      "detection_10": 0.7859,
+      "false_dispute_5_different_model": 0.0615,
+      "false_dispute_5_same_model": 0.0345
+    },
+    "10": {
+      "n": 481,
+      "drives": 57,
+      "reldiff_median": 0.0031,
+      "reldiff_p95": 0.0652,
+      "reldiff_max": 0.2873,
+      "err_vs_ref_median": 0.0042,
+      "err_vs_ref_p95": 0.0549,
+      "false_dispute_3": 0.0769,
+      "detection_3": 0.9293,
+      "false_dispute_5": 0.0561,
+      "detection_5": 0.8649,
+      "false_dispute_5_ci95": [
+        0.021,
+        0.0978
+      ],
+      "detection_5_ci95": [
+        0.8124,
+        0.9241
+      ],
+      "false_dispute_10": 0.0249,
+      "detection_10": 0.7921,
+      "false_dispute_5_different_model": 0.0704,
+      "false_dispute_5_same_model": 0.0159
+    }
+  },
+  "naive_rule_fails": true,
+  "correction": {
+    "chosen_X_m": null,
+    "half_A_drives": 29,
+    "half_B_drives": 29,
+    "by_length": {}
+  }
+}

@@ -77,3 +77,13 @@ Data are synthetic (fixed seeds) except the sample of the French carpool registr
 ## Screening of AINA papers
 
 `screening/aina_2017_2026_screening.csv` lists the candidates kept after a title screening of the 2,406 AINA 2017–2026 papers (main track and workshops) and the reading of about 120 abstracts. Relevance is a single reviewer's judgment. Group codes: MOB = mobility, REC = recommendation, ONT = ontologies and semantic web.
+
+
+## Reproduce with one command
+
+```bash
+./reproduce.sh                       # Python 3.10+, Java 11+, Node 18+; downloads Jena 4.10.0 (checksum verified) and Oxigraph 0.5.13
+./reproduce.sh --gsdc <GSDC train>   # also the GNSS fare analysis (Kaggle GSDC 2022 data, not redistributable)
+```
+
+It regenerates every number that does not come from a phone and compares it with the committed results; timing fields are machine-dependent and are not compared. Phone measurements and language-model calls are not re-run; their raw files are included and the checks on them are re-run.

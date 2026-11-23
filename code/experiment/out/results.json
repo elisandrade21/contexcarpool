@@ -187,21 +187,21 @@
     "latency_python_reference_not_reported": {
       "20": {
         "reps": 200,
-        "median_ms": 3.5,
-        "p95_ms": 6.5,
-        "listings_per_s": 5650
+        "median_ms": 3.8,
+        "p95_ms": 7.2,
+        "listings_per_s": 5221
       },
       "100": {
         "reps": 100,
-        "median_ms": 12.8,
-        "p95_ms": 16.4,
-        "listings_per_s": 7838
+        "median_ms": 14.6,
+        "p95_ms": 19.4,
+        "listings_per_s": 6842
       },
       "1000": {
         "reps": 20,
-        "median_ms": 116.9,
-        "p95_ms": 194.4,
-        "listings_per_s": 8553
+        "median_ms": 125.6,
+        "p95_ms": 215.2,
+        "listings_per_s": 7964
       }
     },
     "platform": {
@@ -347,16 +347,16 @@
       "shap_sign_contradicts_exact_pct": 0.0
     },
     "ontology_metrics": {
-      "triples": 180,
-      "classes": 11,
-      "object_properties": 6,
-      "datatype_properties": 7,
-      "named_individuals": 17,
-      "subclass_axioms": 9,
-      "disjointness_axioms": 8,
-      "functional_properties": 9,
+      "triples": 281,
+      "classes": 14,
+      "object_properties": 9,
+      "datatype_properties": 13,
+      "named_individuals": 30,
+      "subclass_axioms": 11,
+      "disjointness_axioms": 15,
+      "functional_properties": 17,
       "schema_org_alignments": 4,
-      "prov_alignments": 3
+      "prov_alignments": 5
     }
   },
   "aina2027_weight_methods": {
@@ -440,16 +440,5 @@
       "tau_mean": 0.775,
       "top10_mean": 1.0
     }
-  },
-  "ontology_metrics": {
-    "classes": 14,
-    "object_properties": 9,
-    "datatype_properties": 13,
-    "named_individuals": 30,
-    "functional_properties": 17,
-    "disjointness_axioms": 15,
-    "alignments_schema_org": 4,
-    "alignments_prov_o": 5,
-    "note": "counted from code/ontology/ridesharing.ttl on 2026-11-05"
   }
 }

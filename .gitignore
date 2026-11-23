@@ -44,3 +44,8 @@ code/experiment/mobile/web/bench.json
 !code/experiment/out/mobile_bytes.json
 !code/experiment/out/rationale_check.json
 !code/experiment/out/baselines.json
+
+code/experiment/gsdc/data/
+code/experiment/gsdc/segmentos_gsdc.csv
+.tools/
+code/.tools/

@@ -1,6 +1,6 @@
 # Contextual Assistance for Users of Ridesharing Services (AINA-2027)
 
-ContexCarpool: explainable ranking of peer-carpooling offers with an OWL context model, SHACL, SPARQL 1.1 rules and PROV-O, on a server or in a mobile browser.
+ContexCarpool: carpool offer ranking and fares that the passenger's phone can verify, with an OWL context model, SHACL, SPARQL 1.1 rules and PROV-O, re-executed on a server or in a mobile browser.
 
 Authors: Elisa de Fátima Andrade Soares, Breno José Ribeiro de Vasconcelos, Carlos André Guimarães Ferraz (CIn/UFPE).
 

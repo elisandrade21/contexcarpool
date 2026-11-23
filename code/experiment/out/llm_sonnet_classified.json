@@ -1,0 +1,1058 @@
+[
+ {
+  "id": 5,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 8,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": true
+ },
+ {
+  "id": 25,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 35,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 42,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": true
+ },
+ {
+  "id": 51,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 117,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 121,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 153,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 158,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 167,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": true
+ },
+ {
+  "id": 174,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "top comfort factor (5)",
+  "meta_note": false
+ },
+ {
+  "id": 204,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": true
+ },
+ {
+  "id": 208,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 214,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 247,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 276,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 286,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 302,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 309,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": true
+ },
+ {
+  "id": 312,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": true
+ },
+ {
+  "id": 332,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 337,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 341,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 358,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 364,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 382,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 400,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 410,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 442,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 449,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 562,
+  "kind": "llm",
+  "flagged": true,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 600,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (position 9)",
+  "meta_note": false
+ },
+ {
+  "id": 601,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (seats 3)",
+  "meta_note": false
+ },
+ {
+  "id": 602,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (position 59, booking manual)",
+  "meta_note": false
+ },
+ {
+  "id": 603,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 32)",
+  "meta_note": false
+ },
+ {
+  "id": 604,
+  "kind": "llm_subtle",
+  "flagged": false,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 605,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 13)",
+  "meta_note": false
+ },
+ {
+  "id": 606,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 92)",
+  "meta_note": false
+ },
+ {
+  "id": 607,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 43)",
+  "meta_note": false
+ },
+ {
+  "id": 608,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 67)",
+  "meta_note": false
+ },
+ {
+  "id": 609,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 92)",
+  "meta_note": false
+ },
+ {
+  "id": 610,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 611,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 20)",
+  "meta_note": false
+ },
+ {
+  "id": 612,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 54)",
+  "meta_note": false
+ },
+ {
+  "id": 613,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 43)",
+  "meta_note": false
+ },
+ {
+  "id": 614,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 615,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 59)",
+  "meta_note": false
+ },
+ {
+  "id": 616,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 96)",
+  "meta_note": false
+ },
+ {
+  "id": 617,
+  "kind": "llm_subtle",
+  "flagged": false,
+  "false_claim": true,
+  "claim": "booking is instant but requires the driver's confirmation",
+  "meta_note": false
+ },
+ {
+  "id": 618,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 36)",
+  "meta_note": false
+ },
+ {
+  "id": 619,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 620,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 65)",
+  "meta_note": false
+ },
+ {
+  "id": 621,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 622,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 87)",
+  "meta_note": false
+ },
+ {
+  "id": 623,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 624,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 60)",
+  "meta_note": false
+ },
+ {
+  "id": 625,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 78)",
+  "meta_note": false
+ },
+ {
+  "id": 626,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 627,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 628,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 17)",
+  "meta_note": false
+ },
+ {
+  "id": 629,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 87)",
+  "meta_note": false
+ },
+ {
+  "id": 630,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 43)",
+  "meta_note": false
+ },
+ {
+  "id": 631,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 40)",
+  "meta_note": false
+ },
+ {
+  "id": 632,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 78)",
+  "meta_note": false
+ },
+ {
+  "id": 633,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (seats 4)",
+  "meta_note": false
+ },
+ {
+  "id": 634,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (seats 3)",
+  "meta_note": false
+ },
+ {
+  "id": 635,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking manual)",
+  "meta_note": false
+ },
+ {
+  "id": 636,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 43)",
+  "meta_note": false
+ },
+ {
+  "id": 637,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 61)",
+  "meta_note": false
+ },
+ {
+  "id": 638,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 63)",
+  "meta_note": false
+ },
+ {
+  "id": 639,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 640,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 78)",
+  "meta_note": false
+ },
+ {
+  "id": 641,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 11)",
+  "meta_note": false
+ },
+ {
+  "id": 642,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 19)",
+  "meta_note": false
+ },
+ {
+  "id": 643,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 77)",
+  "meta_note": false
+ },
+ {
+  "id": 644,
+  "kind": "llm_subtle",
+  "flagged": false,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 645,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 646,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 78)",
+  "meta_note": false
+ },
+ {
+  "id": 647,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 38)",
+  "meta_note": false
+ },
+ {
+  "id": 648,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 41)",
+  "meta_note": false
+ },
+ {
+  "id": 649,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 38)",
+  "meta_note": false
+ },
+ {
+  "id": 650,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (position 89)",
+  "meta_note": false
+ },
+ {
+  "id": 651,
+  "kind": "llm_subtle",
+  "flagged": false,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 652,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 90)",
+  "meta_note": false
+ },
+ {
+  "id": 653,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 78)",
+  "meta_note": false
+ },
+ {
+  "id": 654,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 38)",
+  "meta_note": false
+ },
+ {
+  "id": 655,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 16)",
+  "meta_note": false
+ },
+ {
+  "id": 656,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 45)",
+  "meta_note": false
+ },
+ {
+  "id": 657,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 68)",
+  "meta_note": false
+ },
+ {
+  "id": 658,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 90)",
+  "meta_note": false
+ },
+ {
+  "id": 659,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 78)",
+  "meta_note": false
+ },
+ {
+  "id": 660,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 12)",
+  "meta_note": false
+ },
+ {
+  "id": 661,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 56)",
+  "meta_note": false
+ },
+ {
+  "id": 662,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 53)",
+  "meta_note": false
+ },
+ {
+  "id": 663,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 16)",
+  "meta_note": false
+ },
+ {
+  "id": 664,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 78)",
+  "meta_note": false
+ },
+ {
+  "id": 665,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 78)",
+  "meta_note": false
+ },
+ {
+  "id": 666,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 80)",
+  "meta_note": false
+ },
+ {
+  "id": 667,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 54)",
+  "meta_note": false
+ },
+ {
+  "id": 668,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking manual)",
+  "meta_note": false
+ },
+ {
+  "id": 669,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 23)",
+  "meta_note": false
+ },
+ {
+  "id": 670,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 15)",
+  "meta_note": false
+ },
+ {
+  "id": 671,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 672,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 60)",
+  "meta_note": false
+ },
+ {
+  "id": 673,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 53)",
+  "meta_note": false
+ },
+ {
+  "id": 674,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 40)",
+  "meta_note": false
+ },
+ {
+  "id": 675,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (seats 4)",
+  "meta_note": false
+ },
+ {
+  "id": 676,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (seats 4)",
+  "meta_note": false
+ },
+ {
+  "id": 677,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 25)",
+  "meta_note": false
+ },
+ {
+  "id": 678,
+  "kind": "llm_subtle",
+  "flagged": false,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 679,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 680,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 40)",
+  "meta_note": false
+ },
+ {
+  "id": 681,
+  "kind": "llm_subtle",
+  "flagged": false,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 682,
+  "kind": "llm_subtle",
+  "flagged": false,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 683,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking manual)",
+  "meta_note": false
+ },
+ {
+  "id": 684,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 70)",
+  "meta_note": false
+ },
+ {
+  "id": 685,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking manual)",
+  "meta_note": false
+ },
+ {
+  "id": 686,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (seats 4)",
+  "meta_note": false
+ },
+ {
+  "id": 687,
+  "kind": "llm_subtle",
+  "flagged": false,
+  "false_claim": false,
+  "claim": "",
+  "meta_note": false
+ },
+ {
+  "id": 688,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 53)",
+  "meta_note": false
+ },
+ {
+  "id": 689,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 690,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 54)",
+  "meta_note": false
+ },
+ {
+  "id": 691,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (seats 4)",
+  "meta_note": false
+ },
+ {
+  "id": 692,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 693,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 25)",
+  "meta_note": false
+ },
+ {
+  "id": 694,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking automatic)",
+  "meta_note": false
+ },
+ {
+  "id": 695,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 20)",
+  "meta_note": false
+ },
+ {
+  "id": 696,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (level comfortable)",
+  "meta_note": false
+ },
+ {
+  "id": 697,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (seats 4)",
+  "meta_note": false
+ },
+ {
+  "id": 698,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (percentile 58)",
+  "meta_note": false
+ },
+ {
+  "id": 699,
+  "kind": "llm_subtle",
+  "flagged": true,
+  "false_claim": true,
+  "claim": "planted error (booking manual)",
+  "meta_note": false
+ }
+]

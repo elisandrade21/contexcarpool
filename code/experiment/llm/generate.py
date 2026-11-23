@@ -1,11 +1,13 @@
 """M1 and M4: the model phrases each rationale (M1) and, for 100 offers, rewrites a correct one with one subtle
 factual error (M4). The API key is read from the macOS Keychain at run time (service anthropic_api_key) and never
 stored. Writes out/llm_generated.json with the prompts, model id and outputs."""
-import json, os, subprocess, concurrent.futures as cf
+import json, os, sys, subprocess, concurrent.futures as cf
 import anthropic
 
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "..", "out")
-MODEL = "claude-haiku-5-5"
+MODEL = sys.argv[1] if len(sys.argv) > 1 else "claude-haiku-5-5"
+SUFFIX = "" if MODEL == "claude-haiku-5-5" else "_" + MODEL.split("-")[1]
+PRICE = {"claude-haiku-5-5": (1.0, 5.0), "claude-sonnet-5-5": (2.0, 10.0)}[MODEL]   # US$ per MTok in/out
 F = json.load(open(os.path.join(OUT, "llm_facts.json")))
 
 def trace(f):
@@ -46,7 +48,7 @@ with cf.ThreadPoolExecutor(8) as ex:
     a = list(ex.map(m1, range(len(F))))
     b = list(ex.map(m4, range(0, len(F), 6)))          # 100 offers, every 6th
 res = dict(model=MODEL, effort="low", prompt_explain=P_EXPLAIN, prompt_subtle=P_SUBTLE, items=a + b)
-json.dump(res, open(os.path.join(OUT, "llm_generated.json"), "w"), indent=1)
+json.dump(res, open(os.path.join(OUT, "llm_generated" + SUFFIX + ".json"), "w"), indent=1)
 tok_in = sum(x["in_tok"] for x in a + b); tok_out = sum(x["out_tok"] for x in a + b)
 print(len(a), "explanations;", len(b), "subtle;", sum(x["text"] is None for x in a + b), "refusals;",
-      f"tokens in {tok_in}, out {tok_out}, est. US$ {tok_in/1e6*0.10 + tok_out/1e6*0.50:.4f}")
+      f"tokens in {tok_in}, out {tok_out}, est. US$ {tok_in/1e6*PRICE[0] + tok_out/1e6*PRICE[1]:.4f}")

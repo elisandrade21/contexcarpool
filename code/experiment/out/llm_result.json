@@ -1,0 +1,64 @@
+{
+ "model": "claude-haiku-5-5",
+ "M1_texts": 600,
+ "M1_failed": 4,
+ "M1_failed_share": 0.0067,
+ "M1_ci95": [
+  0.0026,
+  0.017
+ ],
+ "M1_reasons": {
+  "booking": 3,
+  "number": 1
+ },
+ "M2": "600/600 pass",
+ "M3": "600/600 fail",
+ "M4_texts": 100,
+ "M4_flagged": 48,
+ "M5_ms_per_100": 3.234,
+ "M6_agreement": "700/700",
+ "examples_failed": [
+  {
+   "text": "This offer sits at position 32 of 100 because its overall score is 6.42, computed from a comfort factor of 5, a second factor of 9.8, and a third factor of 2.5, weighted 40%, 40%, and 20%. It is rated Bearable comfort because it has 2 free seats, and it is among the cheapest quarter of offers at 0.0397 per km (percentile 2), but it requires driver approval rather than instant booking.",
+   "why": [
+    "booking automatic"
+   ]
+  },
+  {
+   "text": "This offer ranks seventh of 100 with a score of 8.42, driven by strong values on the two heavier-weighted factors (10 and 9.8) and a weaker value on the lighter one (2.5). It is also among the cheapest in the search (price per km of 0.0481, percentile 2), but it requires driver approval rather than instant booking.",
+   "why": [
+    "booking automatic"
+   ]
+  },
+  {
+   "text": "This offer ranks fifth of 20 with a score of 6.5, driven by strong factors f_C and f_K (both 7.5) and a weaker f_B (2.5). It is rated Comfortable because it has 3 free seats, and it is among the cheapest quarter of the search at 0.0532 per km, but it requires driver approval rather than booking instantly.",
+   "why": [
+    "booking automatic"
+   ]
+  },
+  {
+   "text": "This offer ranks second of 20 because its score is 8.2, computed as 0.4 times a f_C of 10, 0.4 times a f_K of 5.5, and 0.2 times a f_B of 10. It is listed as VeryComfortable, inferred from its 4 free seats, and it has a price of 0.0642 per km, which is cheaper than 55% of the offers in this search, with booking mode set to auto.",
+   "why": [
+    "number 55"
+   ]
+  }
+ ],
+ "examples_subtle_missed": [
+  {
+   "text": "Rule R2 marked this trip as comfortable based on its 3 free seats, the price per km sits at percentile 24 of the search, and booking is automatic. It falls among the cheapest quarter of the search and books instantly.",
+   "fact": "rule R2 inferred comfortable from the available seats, the price per km lies at percentile 24 of the search, and booking is automatic; among the cheapest quarter of the search and books instantly"
+  },
+  {
+   "text": "Rule R4 marked this trip as Uncomfortable because only 1 seat is free, the price per km sits at the 50th percentile of the search, and the booking is automatic.",
+   "fact": "rule R4 inferred uncomfortable from the available seats, the price per km lies at percentile 50 of the search, and booking is automatic"
+  },
+  {
+   "text": "Rule R1 classed this ride as very comfortable based on its four free seats, the price per km sits at the 29th percentile of the search, making it one of the cheaper options, and the driver accepts bookings manually.",
+   "fact": "rule R1 inferred very comfortable from the available seats, the price per km lies at percentile 29 of the search, and booking is manual"
+  },
+  {
+   "text": "Rule R2 classified this trip as comfortable based on the three free seats, the price per km sits at percentile 73 of the search, and booking is manual.",
+   "fact": "rule R2 inferred comfortable from the available seats, the price per km lies at percentile 73 of the search, and booking is manual"
+  }
+ ]
+}

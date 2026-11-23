@@ -1,0 +1,262 @@
+[
+ {
+  "i": 0,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 12,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 36,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 60,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 72,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 84,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 120,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 126,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 150,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 162,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 168,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 180,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 186,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 198,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 210,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 216,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 228,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 234,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 240,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 270,
+  "class": "error_out_of_scope",
+  "error": "three free seats (facts: 2)"
+ },
+ {
+  "i": 276,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 288,
+  "class": "error_out_of_scope",
+  "error": "three available seats (facts: 2)"
+ },
+ {
+  "i": 294,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 318,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 336,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 342,
+  "class": "error_out_of_scope",
+  "error": "unsupported causal claim: trade-off explains rank 82"
+ },
+ {
+  "i": 348,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 366,
+  "class": "error_in_scope_missed",
+  "error": "booked manually (facts: auto)"
+ },
+ {
+  "i": 372,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 378,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 384,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 390,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 408,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 414,
+  "class": "error_out_of_scope",
+  "error": "three free seats (facts: 4)"
+ },
+ {
+  "i": 432,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 438,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 444,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 450,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 456,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 462,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 468,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 486,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 492,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 498,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 510,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 516,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 522,
+  "class": "error_out_of_scope",
+  "error": "unsupported causal claim: trade-off places it at position 8"
+ },
+ {
+  "i": 528,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 546,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 552,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 570,
+  "class": "no_error",
+  "error": ""
+ },
+ {
+  "i": 588,
+  "class": "error_out_of_scope",
+  "error": "three free seats (facts: 4)"
+ }
+]

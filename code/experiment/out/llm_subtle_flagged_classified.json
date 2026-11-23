@@ -1,0 +1,242 @@
+[
+ {
+  "i": 6,
+  "class": "true_error",
+  "error": "percentile 69 contradicts facts"
+ },
+ {
+  "i": 18,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 24,
+  "class": "true_error",
+  "error": "percentile 87 contradicts facts"
+ },
+ {
+  "i": 30,
+  "class": "true_error",
+  "error": "percentile 13; booking manual contradicts facts"
+ },
+ {
+  "i": 42,
+  "class": "true_error",
+  "error": "final rewrite says percentile 43 (facts: 34); text also has meta commentary"
+ },
+ {
+  "i": 48,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 54,
+  "class": "true_error",
+  "error": "percentile 87 contradicts facts"
+ },
+ {
+  "i": 66,
+  "class": "true_error",
+  "error": "seats 2 contradicts facts"
+ },
+ {
+  "i": 78,
+  "class": "true_error",
+  "error": "percentile 43 contradicts facts"
+ },
+ {
+  "i": 90,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 96,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 102,
+  "class": "true_error",
+  "error": "percentile 14 contradicts facts"
+ },
+ {
+  "i": 108,
+  "class": "true_error",
+  "error": "percentile 62 contradicts facts"
+ },
+ {
+  "i": 114,
+  "class": "true_error",
+  "error": "percentile 36 contradicts facts"
+ },
+ {
+  "i": 132,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 138,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 144,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 156,
+  "class": "true_error",
+  "error": "percentile 23 contradicts facts"
+ },
+ {
+  "i": 174,
+  "class": "true_error",
+  "error": "percentile 87 contradicts facts"
+ },
+ {
+  "i": 192,
+  "class": "true_error",
+  "error": "percentile 19 contradicts facts"
+ },
+ {
+  "i": 204,
+  "class": "true_error",
+  "error": "percentile 23 contradicts facts"
+ },
+ {
+  "i": 222,
+  "class": "true_error",
+  "error": "seats 4 contradicts facts"
+ },
+ {
+  "i": 246,
+  "class": "true_error",
+  "error": "seats 2 contradicts facts"
+ },
+ {
+  "i": 252,
+  "class": "true_error",
+  "error": "seats 2; booking manual contradicts facts"
+ },
+ {
+  "i": 258,
+  "class": "true_error",
+  "error": "percentile 69 contradicts facts"
+ },
+ {
+  "i": 264,
+  "class": "true_error",
+  "error": "attributes inference to Rule R5 (facts: R3)"
+ },
+ {
+  "i": 282,
+  "class": "true_error",
+  "error": "percentile 19 contradicts facts"
+ },
+ {
+  "i": 300,
+  "class": "true_error",
+  "error": "seats 2 contradicts facts"
+ },
+ {
+  "i": 306,
+  "class": "true_error",
+  "error": "percentile 84 contradicts facts"
+ },
+ {
+  "i": 312,
+  "class": "true_error",
+  "error": "percentile 20 contradicts facts"
+ },
+ {
+  "i": 324,
+  "class": "true_error",
+  "error": "percentile 38 contradicts facts"
+ },
+ {
+  "i": 330,
+  "class": "true_error",
+  "error": "booking manual contradicts facts"
+ },
+ {
+  "i": 354,
+  "class": "true_error",
+  "error": "percentile 15 contradicts facts"
+ },
+ {
+  "i": 360,
+  "class": "true_error",
+  "error": "percentile 12 contradicts facts"
+ },
+ {
+  "i": 396,
+  "class": "true_error",
+  "error": "percentile 10 contradicts facts"
+ },
+ {
+  "i": 402,
+  "class": "true_error",
+  "error": "percentile 54 contradicts facts"
+ },
+ {
+  "i": 420,
+  "class": "true_error",
+  "error": "position 2 contradicts facts"
+ },
+ {
+  "i": 426,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 474,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 480,
+  "class": "true_error",
+  "error": "percentile 70 contradicts facts"
+ },
+ {
+  "i": 504,
+  "class": "true_error",
+  "error": "percentile 40 contradicts facts"
+ },
+ {
+  "i": 534,
+  "class": "true_error",
+  "error": "seats 5 contradicts facts"
+ },
+ {
+  "i": 540,
+  "class": "true_error",
+  "error": "percentile 40 contradicts facts"
+ },
+ {
+  "i": 558,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 564,
+  "class": "true_error",
+  "error": "percentile 13 contradicts facts"
+ },
+ {
+  "i": 576,
+  "class": "true_error",
+  "error": "percentile 30 contradicts facts"
+ },
+ {
+  "i": 582,
+  "class": "true_error",
+  "error": "booking automatic contradicts facts"
+ },
+ {
+  "i": 594,
+  "class": "true_error",
+  "error": "final rewrite says booking manual (facts: auto); text also has meta commentary"
+ }
+]

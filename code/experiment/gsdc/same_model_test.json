@@ -1,0 +1,9 @@
+{
+  "tolerance": 0.05,
+  "drives": 58,
+  "drives_with_both_kinds": 11,
+  "pooled_rate_same_model": 0.03648269410664172,
+  "pooled_rate_different_model": 0.07431340872374798,
+  "wilcoxon_statistic": 16.0,
+  "wilcoxon_p": 0.84375
+}

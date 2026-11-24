@@ -3,7 +3,7 @@
  "setup": "Chromium (Claude desktop browser pane) in mobile emulation 375x812, page served from localhost through the logging proxy traffic_proxy.py in front of RankService; same web build as the paper (build_web.py, Oxigraph 0.5.13).",
  "session": "6 cities x 3 positions x 3 clocks x 2 orders = 108 context changes; Map tab and Check tab (server ranking, tampered copy, fare on phone) once per city.",
  "requests_to_service": 40,
- "static_gets": 26,
+ "static_gets": 28,
  "rank_posts": 12,
  "rank_post_fields": ["id","market","seats","booking","price_per_km","distance","plat","plon","dep"],
  "posts_with_device_position_clock_or_context": 0,

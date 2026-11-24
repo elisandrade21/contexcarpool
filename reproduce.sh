@@ -72,6 +72,7 @@ if [ -n "$GSDC" ]; then
   BEFORE_G=$(mktemp -d); cp experiment/gsdc/*.json "$BEFORE_G/"
   mkdir -p experiment/gsdc/data && ln -sfn "$(cd "$GSDC" && pwd)" experiment/gsdc/data/train
   python3 experiment/gsdc/analisar.py
+  python3 experiment/gsdc/same_model_test.py
   python3 experiment/compare_outputs.py "$BEFORE_G" experiment/gsdc
 fi
 

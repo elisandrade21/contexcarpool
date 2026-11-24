@@ -65,6 +65,7 @@ node experiment/llm/facts.mjs "$OX"
 python3 experiment/llm/controls.py
 python3 experiment/llm/evaluate.py > /dev/null
 python3 experiment/llm/evaluate_sonnet.py > /dev/null
+python3 experiment/readability.py > /dev/null
 
 if [ -n "$GSDC" ]; then
   step "GNSS fare analysis (Google Smartphone Decimeter Challenge 2022)"

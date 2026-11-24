@@ -4,3 +4,4 @@ scipy
 rdflib>=7
 scikit-learn
 shap
+textstat==0.7.10

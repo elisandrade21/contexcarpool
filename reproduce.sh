@@ -58,6 +58,7 @@ java -cp "$CP" experiment/service/RankService.java $PORT 127.0.0.1 > /tmp/contex
 SVC=$!; trap 'kill $SVC 2>/dev/null || true' EXIT
 for _ in $(seq 60); do curl -s -o /dev/null "http://127.0.0.1:$PORT/" && break; sleep 1; done
 node experiment/mobile/rationale_check.mjs "$OX" $PORT
+node experiment/mobile/signed_check.mjs "$OX" $PORT          # signed publication + independent checker
 python3 experiment/load_test.py $PORT
 
 step "Language-model rationales: checker on the stored model texts (no API call)"
@@ -66,6 +67,8 @@ python3 experiment/llm/controls.py
 python3 experiment/llm/evaluate.py > /dev/null
 python3 experiment/llm/evaluate_sonnet.py > /dev/null
 python3 experiment/readability.py > /dev/null
+python3 experiment/llm/mutation_test.py > /dev/null
+node experiment/mobile/plain_baseline.mjs "$OX" > /dev/null
 
 if [ -n "$GSDC" ]; then
   step "GNSS fare analysis (Google Smartphone Decimeter Challenge 2022)"
@@ -73,6 +76,7 @@ if [ -n "$GSDC" ]; then
   mkdir -p experiment/gsdc/data && ln -sfn "$(cd "$GSDC" && pwd)" experiment/gsdc/data/train
   python3 experiment/gsdc/analisar.py
   python3 experiment/gsdc/same_model_test.py
+  python3 experiment/gsdc/detection_curve.py > /dev/null
   python3 experiment/compare_outputs.py "$BEFORE_G" experiment/gsdc
 fi
 

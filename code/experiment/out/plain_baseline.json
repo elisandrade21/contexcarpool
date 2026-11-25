@@ -1,0 +1,37 @@
+{
+  "engine": "Node v20.18.3, laptop",
+  "repetitions": 5,
+  "sizes": {
+    "20": {
+      "searches": 40,
+      "score_differences": 0,
+      "order_differences": 0,
+      "plain_ms_median": 0.007,
+      "oxigraph_ms_median": 2.6,
+      "ratio": 359
+    },
+    "100": {
+      "searches": 40,
+      "score_differences": 0,
+      "order_differences": 0,
+      "plain_ms_median": 0.09,
+      "oxigraph_ms_median": 33.78,
+      "ratio": 375
+    },
+    "1000": {
+      "searches": 3,
+      "score_differences": 0,
+      "order_differences": 0,
+      "plain_ms_median": 1.222,
+      "oxigraph_ms_median": 488.09,
+      "ratio": 399
+    }
+  },
+  "bytes": {
+    "oxigraph_wasm": 4324920,
+    "oxigraph_js": 50946,
+    "rules_and_queries": 8099,
+    "ontology": 12341,
+    "plain_rank_function": 812
+  }
+}

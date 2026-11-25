@@ -1,0 +1,16 @@
+{
+ "note": "Independent checker page served from http://127.0.0.1:8802 (python http.server), platform RankService on http://127.0.0.1:8765 (another origin, CORS); Chromium in the Claude desktop browser pane, mobile emulation 375x812, laptop; 40 searches of 100 offers; 2026-11-25.",
+ "checker_origin": "http://127.0.0.1:8802",
+ "platform_origin": "http://127.0.0.1:8765",
+ "user_agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Mobile Safari/537.36",
+ "wasm_init_ms": 17.1,
+ "cases": {
+  "honest": {"conformant": 40},
+  "swap_order": {"rejected: bad or missing signature": 40},
+  "no_signature": {"rejected: bad or missing signature": 40},
+  "promote": {"non-conformant (signed evidence)": 40},
+  "reweight": {"non-conformant (signed evidence)": 40},
+  "other_rules": {"rejected: declared rules differ from the registered rules": 40}
+ },
+ "ms": {"fetch_median": 12.6, "verify_median": 0.3, "hash_median": 0.2, "recompute_median": 60.4, "total_median": 61.9}
+}

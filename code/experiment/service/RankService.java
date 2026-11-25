@@ -60,6 +60,7 @@ public class RankService {
             ex.sendResponseHeaders(code, body.length);
             try (OutputStream os = ex.getResponseBody()) { os.write(body); }
         });
+        publishRoute(srv);
         srv.setExecutor(Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()));
         srv.start();
         System.out.println("RankService listening on http://127.0.0.1:" + port + "/rank");
@@ -194,5 +195,83 @@ public class RankService {
     }
     static int lower(double[] a, double x) { int l = 0, h = a.length; while (l < h) { int k = (l + h) >>> 1; if (a[k] < x) l = k + 1; else h = k; } return l; }
     static int upper(double[] a, double x) { int l = 0, h = a.length; while (l < h) { int k = (l + h) >>> 1; if (a[k] <= x) l = k + 1; else h = k; } return l; }
+
+
+    // Signed publication (Sect. 3.4): GET /publish?set=100&i=3&mode=honest returns the platform's listings and ranking
+    // for one search, with the SHA-256 of the declared rule files, signed with ECDSA P-256 (IEEE P1363 signature,
+    // header X-Signature, over the exact body bytes). The key pair is created at start; only the public key is written
+    // (experiment/out/signed/platform_key.json), standing for the key a regulator registers. Misbehaving modes, for the
+    // experiment: promote (moves the last offer to the top with a higher score), reweight (ranks with 0.3/0.5/0.2 instead
+    // of the declared 0.4/0.4/0.2), other_rules (declares rule hashes of another version). Every mode is signed.
+    static java.security.KeyPair platformKey;
+    static void publishRoute(HttpServer srv) throws Exception {
+        java.security.KeyPairGenerator g = java.security.KeyPairGenerator.getInstance("EC");
+        g.initialize(new java.security.spec.ECGenParameterSpec("secp256r1"));
+        platformKey = g.generateKeyPair();
+        Path dir = Path.of("experiment/out/signed"); Files.createDirectories(dir);
+        Files.writeString(dir.resolve("platform_key.json"), "{\"alg\":\"ECDSA-P256-SHA256\",\"spki_b64\":\"" +
+            Base64.getEncoder().encodeToString(platformKey.getPublic().getEncoded()) + "\"}\n");
+        String[] declared = {"ontology/ridesharing.ttl", "ontology/rules.ru", "experiment/sparql/cost_percentiles.rq", "experiment/sparql/rationale.rq"};
+        JsonObject hashes = new JsonObject(), other = new JsonObject();
+        for (String f : declared) {
+            byte[] b = Files.readAllBytes(Path.of(f));
+            String name = Path.of(f).getFileName().toString();
+            hashes.put(name, sha256(b));
+            other.put(name, f.endsWith("rationale.rq") ? sha256(new String(b, StandardCharsets.UTF_8).replace("0.4 * ?fC + 0.4 * ?fK", "0.3 * ?fC + 0.5 * ?fK").getBytes(StandardCharsets.UTF_8)) : sha256(b));
+        }
+        JsonObject searches = JSON.parse(Files.readString(Path.of("experiment/out/mobile_searches.json"))).getAsObject().get("latency").getAsObject();
+        srv.createContext("/publish", ex -> {
+            byte[] body; int code = 200; String sig = "";
+            try {
+                Map<String, String> q = new HashMap<>();
+                for (String kv : Optional.ofNullable(ex.getRequestURI().getQuery()).orElse("").split("&"))
+                    if (kv.contains("=")) q.put(kv.substring(0, kv.indexOf('=')), kv.substring(kv.indexOf('=') + 1));
+                String set = q.getOrDefault("set", "100"), mode = q.getOrDefault("mode", "honest");
+                int i = Integer.parseInt(q.getOrDefault("i", "0"));
+                JsonObject s = searches.get(set).getAsArray().get(i).getAsObject();
+                JsonArray listings = new JsonArray();
+                for (JsonValue v : s.get("offers").getAsArray()) {
+                    JsonObject o = v.getAsObject(), l = new JsonObject();
+                    l.put("id", o.get("id").getAsString().value().substring(5)); l.put("market", s.get("market").getAsString().value());
+                    l.put("seats", o.get("seats").getAsNumber().value().longValue()); l.put("booking", o.get("booking").getAsString().value());
+                    l.put("price_per_km", JsonNumber.value(new java.math.BigDecimal(o.get("price_per_km").getAsString().value())));
+                    l.put("distance", JsonNumber.value(new java.math.BigDecimal(o.get("distance").getAsString().value())));
+                    listings.add(l);
+                }
+                JsonArray ranked = rank(listings, null).get("ranked").getAsArray(), pub = new JsonArray();
+                List<JsonObject> rows = new ArrayList<>();
+                for (JsonValue v : ranked) { JsonObject r = v.getAsObject(), o = new JsonObject();
+                    o.put("id", r.getString("id")); o.put("S", r.get("S")); o.put("rationale", r.getString("rationale"));
+                    o.put("fC", r.get("f_C")); o.put("fK", r.get("f_K")); o.put("fB", r.get("f_B")); rows.add(o); }
+                if (mode.equals("promote")) { JsonObject last = rows.remove(rows.size() - 1);
+                    last.put("S", JsonNumber.value(rows.get(0).get("S").getAsNumber().value().doubleValue() + 0.5)); rows.add(0, last); }
+                if (mode.equals("reweight")) {
+                    for (JsonObject o : rows) o.put("S", JsonNumber.value(0.3 * num(o, "fC") + 0.5 * num(o, "fK") + 0.2 * num(o, "fB")));
+                    rows.sort((a, b) -> Double.compare(num(b, "S"), num(a, "S")));
+                }
+                for (JsonObject o : rows) { JsonObject r = new JsonObject(); r.put("id", o.getString("id")); r.put("S", o.get("S")); r.put("rationale", o.getString("rationale")); pub.add(r); }
+                JsonObject out = new JsonObject();
+                out.put("search", set + "/" + i); out.put("market", s.get("market").getAsString().value());
+                out.put("rules_sha256", mode.equals("other_rules") ? other : hashes);
+                out.put("listings", listings); out.put("ranked", pub);
+                body = out.toString().getBytes(StandardCharsets.UTF_8);
+                java.security.Signature sg = java.security.Signature.getInstance("SHA256withECDSAinP1363Format");
+                sg.initSign(platformKey.getPrivate()); sg.update(body);
+                sig = Base64.getEncoder().encodeToString(sg.sign());
+            } catch (Exception e) { code = 400; body = ("{\"error\":\"" + e + "\"}").getBytes(StandardCharsets.UTF_8); }
+            ex.getResponseHeaders().add("Content-Type", "application/json");
+            ex.getResponseHeaders().add("X-Signature", sig);
+            ex.getResponseHeaders().add("Access-Control-Allow-Origin", "*");          // the checker is served from another origin
+            ex.getResponseHeaders().add("Access-Control-Expose-Headers", "X-Signature");
+            ex.sendResponseHeaders(code, body.length);
+            try (OutputStream os = ex.getResponseBody()) { os.write(body); }
+        });
+    }
+    static double num(JsonObject o, String k) { return o.get(k).getAsNumber().value().doubleValue(); }
+    static String sha256(byte[] b) throws Exception {
+        StringBuilder sb = new StringBuilder();
+        for (byte x : java.security.MessageDigest.getInstance("SHA-256").digest(b)) sb.append(String.format("%02x", x));
+        return sb.toString();
+    }
 
 }

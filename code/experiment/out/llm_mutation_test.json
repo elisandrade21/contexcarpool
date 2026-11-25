@@ -1,0 +1,149 @@
+{
+  "rule-derived": {
+    "accepted_base_texts": 600,
+    "by_category": {
+      "percentile": {
+        "mutated": 600,
+        "rejected": 600,
+        "rate": 1.0
+      },
+      "level": {
+        "mutated": 600,
+        "rejected": 600,
+        "rate": 1.0
+      },
+      "booking": {
+        "mutated": 600,
+        "rejected": 600,
+        "rate": 1.0
+      },
+      "rule": {
+        "mutated": 600,
+        "rejected": 600,
+        "rate": 1.0
+      },
+      "extreme": {
+        "mutated": 600,
+        "rejected": 600,
+        "rate": 1.0
+      },
+      "causal (out of scope)": {
+        "mutated": 600,
+        "rejected": 0,
+        "rate": 0.0
+      }
+    },
+    "in_scope_total": {
+      "mutated": 3000,
+      "rejected": 3000
+    }
+  },
+  "haiku": {
+    "accepted_base_texts": 596,
+    "by_category": {
+      "percentile": {
+        "mutated": 517,
+        "rejected": 517,
+        "rate": 1.0
+      },
+      "position": {
+        "mutated": 535,
+        "rejected": 535,
+        "rate": 1.0
+      },
+      "seats": {
+        "mutated": 539,
+        "rejected": 539,
+        "rate": 1.0
+      },
+      "level": {
+        "mutated": 493,
+        "rejected": 493,
+        "rate": 1.0
+      },
+      "booking": {
+        "mutated": 409,
+        "rejected": 409,
+        "rate": 1.0
+      },
+      "extreme": {
+        "mutated": 596,
+        "rejected": 596,
+        "rate": 1.0
+      },
+      "seats_in_words (out of scope)": {
+        "mutated": 539,
+        "rejected": 0,
+        "rate": 0.0
+      },
+      "causal (out of scope)": {
+        "mutated": 596,
+        "rejected": 0,
+        "rate": 0.0
+      },
+      "rule": {
+        "mutated": 84,
+        "rejected": 84,
+        "rate": 1.0
+      }
+    },
+    "in_scope_total": {
+      "mutated": 3173,
+      "rejected": 3173
+    }
+  },
+  "sonnet": {
+    "accepted_base_texts": 568,
+    "by_category": {
+      "percentile": {
+        "mutated": 462,
+        "rejected": 462,
+        "rate": 1.0
+      },
+      "position": {
+        "mutated": 534,
+        "rejected": 534,
+        "rate": 1.0
+      },
+      "seats": {
+        "mutated": 562,
+        "rejected": 562,
+        "rate": 1.0
+      },
+      "level": {
+        "mutated": 491,
+        "rejected": 491,
+        "rate": 1.0
+      },
+      "booking": {
+        "mutated": 424,
+        "rejected": 424,
+        "rate": 1.0
+      },
+      "extreme": {
+        "mutated": 568,
+        "rejected": 568,
+        "rate": 1.0
+      },
+      "seats_in_words (out of scope)": {
+        "mutated": 562,
+        "rejected": 0,
+        "rate": 0.0
+      },
+      "causal (out of scope)": {
+        "mutated": 568,
+        "rejected": 0,
+        "rate": 0.0
+      },
+      "rule": {
+        "mutated": 83,
+        "rejected": 83,
+        "rate": 1.0
+      }
+    },
+    "in_scope_total": {
+      "mutated": 3124,
+      "rejected": 3124
+    }
+  }
+}

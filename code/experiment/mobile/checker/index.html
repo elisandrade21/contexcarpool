@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Independent checker</title><style>body{font:14px system-ui;margin:16px}pre{white-space:pre-wrap;font-size:12px}</style></head>
+<body><h3>Independent conformance checker</h3><p id="where"></p><pre id="out">running...</pre>
+<script type="module">
+import init, { Store } from "./web.js";
+import { check, importKey, FILES } from "./checker.mjs";
+const P = new URLSearchParams(location.search), PLAT = P.get("platform") || "http://127.0.0.1:8765", N = +(P.get("n") || 40);
+document.getElementById("where").textContent = `Checker origin: ${location.origin}. Platform origin: ${PLAT}.`;
+const t0 = performance.now(); await init(); const wasm = performance.now() - t0;
+const files = Object.fromEntries(await Promise.all(FILES.map(async f => [f, await (await fetch("files/" + f, {cache: "no-cache"})).text()])));
+const key = await importKey((await (await fetch("platform_key.json", {cache: "no-cache"})).json()).spki_b64);
+const enc = new TextEncoder(), dec = new TextDecoder(), med = a => { const b = [...a].sort((x, y) => x - y); return +b[Math.floor(b.length / 2)].toFixed(2); };
+const res = { checker_origin: location.origin, platform_origin: PLAT, user_agent: navigator.userAgent, wasm_init_ms: +wasm.toFixed(1), cases: {}, ms: {} };
+const T = { fetch: [], verify: [], hash: [], recompute: [], total: [] };
+for (const set of ["100"]) for (let i = 0; i < N; i++) for (const mode of ["honest", "promote", "reweight", "other_rules"]) {
+  const tf = performance.now(); const r = await fetch(`${PLAT}/publish?set=${set}&i=${i}&mode=${mode}`);
+  const body = new Uint8Array(await r.arrayBuffer()), sig = r.headers.get("X-Signature"); const fetchMs = performance.now() - tf;
+  const cases = { [mode]: [body, sig] };
+  if (mode === "honest") { const sw = JSON.parse(dec.decode(body)); [sw.ranked[0], sw.ranked[1]] = [sw.ranked[1], sw.ranked[0]]; cases.swap_order = [enc.encode(JSON.stringify(sw)), sig]; cases.no_signature = [body, ""]; }
+  for (const [k, [b, s]] of Object.entries(cases)) {
+    const v = await check(b, s, key, files, Store); const c = res.cases[k] ??= {};
+    c[v.verdict] = (c[v.verdict] || 0) + 1;
+    if (k === "honest") { T.fetch.push(fetchMs); for (const m of ["verify", "hash", "recompute", "total"]) T[m].push(v.ms[m]); }
+  }
+}
+for (const [m, a] of Object.entries(T)) res.ms[m + "_median"] = med(a);
+document.getElementById("out").textContent = JSON.stringify(res, null, 1);
+window.RESULT = res;
+</script></body></html>

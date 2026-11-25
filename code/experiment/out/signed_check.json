@@ -1,0 +1,123 @@
+{
+  "sets": {
+    "20": {
+      "searches": 40,
+      "cases": {
+        "honest": {
+          "n": 40,
+          "verdicts": {
+            "conformant": 40
+          }
+        },
+        "edit_price": {
+          "n": 40,
+          "verdicts": {
+            "rejected: bad or missing signature": 40
+          }
+        },
+        "swap_order": {
+          "n": 40,
+          "verdicts": {
+            "rejected: bad or missing signature": 40
+          }
+        },
+        "no_signature": {
+          "n": 40,
+          "verdicts": {
+            "rejected: bad or missing signature": 40
+          }
+        },
+        "impostor_key": {
+          "n": 40,
+          "verdicts": {
+            "rejected: bad or missing signature": 40
+          }
+        },
+        "promote": {
+          "n": 40,
+          "verdicts": {
+            "non-conformant (signed evidence)": 40
+          }
+        },
+        "reweight": {
+          "n": 40,
+          "verdicts": {
+            "non-conformant (signed evidence)": 40
+          }
+        },
+        "other_rules": {
+          "n": 40,
+          "verdicts": {
+            "rejected: declared rules differ from the registered rules": 40
+          }
+        }
+      },
+      "honest_ms_median": {
+        "verify": 0.094,
+        "hash": 0.108,
+        "recompute": 2.957,
+        "total": 3.202
+      }
+    },
+    "100": {
+      "searches": 40,
+      "cases": {
+        "honest": {
+          "n": 40,
+          "verdicts": {
+            "conformant": 40
+          }
+        },
+        "edit_price": {
+          "n": 40,
+          "verdicts": {
+            "rejected: bad or missing signature": 40
+          }
+        },
+        "swap_order": {
+          "n": 40,
+          "verdicts": {
+            "rejected: bad or missing signature": 40
+          }
+        },
+        "no_signature": {
+          "n": 40,
+          "verdicts": {
+            "rejected: bad or missing signature": 40
+          }
+        },
+        "impostor_key": {
+          "n": 40,
+          "verdicts": {
+            "rejected: bad or missing signature": 40
+          }
+        },
+        "promote": {
+          "n": 40,
+          "verdicts": {
+            "non-conformant (signed evidence)": 40
+          }
+        },
+        "reweight": {
+          "n": 40,
+          "verdicts": {
+            "non-conformant (signed evidence)": 40
+          }
+        },
+        "other_rules": {
+          "n": 40,
+          "verdicts": {
+            "rejected: declared rules differ from the registered rules": 40
+          }
+        }
+      },
+      "honest_ms_median": {
+        "verify": 0.103,
+        "hash": 0.163,
+        "recompute": 9.591,
+        "total": 9.952
+      }
+    }
+  },
+  "platform_key": "ECDSA P-256, SHA-256, signature over the exact response bytes"
+}

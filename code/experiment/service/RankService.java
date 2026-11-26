@@ -159,7 +159,7 @@ public class RankService {
     static void mobileRoutes(HttpServer srv) throws IOException {
         Path web = Path.of("experiment/mobile/web").toAbsolutePath().normalize();
         Path runs = Path.of("experiment/out/mobile_runs"); Files.createDirectories(runs);
-        Map<String, String> mime = Map.of("html", "text/html", "js", "text/javascript", "wasm", "application/wasm", "json", "application/json", "css", "text/css");
+        Map<String, String> mime = Map.of("html", "text/html", "js", "text/javascript", "wasm", "application/wasm", "json", "application/json", "css", "text/css", "png", "image/png");
         srv.createContext("/", ex -> {
             String rel = ex.getRequestURI().getPath().equals("/") ? "index.html" : ex.getRequestURI().getPath().substring(1);
             Path f = web.resolve(rel).normalize();
